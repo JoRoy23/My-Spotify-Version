@@ -1,0 +1,28 @@
+@import "./config.scss";
+
+.featuredPlaylist {
+  margin: 2px 12px 0 0;
+  padding: 5px;
+
+  img {
+    width: 120px;
+    border-radius: 15px;
+    border: 5px solid map-get($colors, blackBorder);
+    @extend %shadow;
+  }
+
+  .featuredPlaylist__title {
+    margin: 9px 0 2px 0;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .featuredPlaylist__description {
+    font-size: 0.6rem;
+    color: map-get($colors, greyText);
+  }
+}
+
+.featuredPlaylist:first-child {
+  margin-left: 15px;
+}

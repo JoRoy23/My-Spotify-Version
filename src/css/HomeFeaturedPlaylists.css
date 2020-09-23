@@ -1,0 +1,23 @@
+.homeFeaturedPlaylists {
+  color: #cfcfcf;
+  margin-bottom: 75px;
+}
+
+.homeFeaturedPlaylists .featured__title {
+  margin: 0 0 8px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.homeFeaturedPlaylists .featured__playlists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.homeFeaturedPlaylists .featured__playlists::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=HomeFeaturedPlaylists.css.map */

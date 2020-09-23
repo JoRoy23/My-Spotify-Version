@@ -1,0 +1,17 @@
+@import "config.scss";
+
+.NewReleasesAlbums {
+  color: map-get($colors, secondaryAccent);
+
+  .release__title {
+    margin: 0 0 13px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .newReleases__albums {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 7px 20px;
+  }
+}

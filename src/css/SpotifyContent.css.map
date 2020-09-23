@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,eAAe,CAAC;EACd,MAAM,EAAE,KAAK;EACb,UAAU,EAAE,MAAM;EAClB,gBAAgB,EAAE,4CAIjB;CACF",
+    "sources": [
+        "../scss/SpotifyContent.scss",
+        "../scss/_config.scss"
+    ],
+    "names": [],
+    "file": "SpotifyContent.css"
+}

@@ -1,0 +1,23 @@
+.homeRecentlyPlayed {
+  color: #cfcfcf;
+  margin-bottom: 10px;
+}
+
+.homeRecentlyPlayed .recently__title {
+  margin: 0 0 8px 20px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.homeRecentlyPlayed .recentlyPlayed__songs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.homeRecentlyPlayed .recentlyPlayed__songs::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=HomeRecentlyPlayed.css.map */

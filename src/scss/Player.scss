@@ -1,0 +1,10 @@
+@import "config.scss";
+
+.player {
+  &__body {
+    @include ipad {
+      display: flex;
+      height: 100vh;
+    }
+  }
+}

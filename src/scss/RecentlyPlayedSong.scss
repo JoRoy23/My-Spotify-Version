@@ -1,0 +1,30 @@
+@import "./config.scss";
+
+.recentlyPlayedSong {
+  margin: 2px 12px 0 0;
+  padding: 5px;
+
+  img {
+    width: 120px;
+    border-radius: 50%;
+    border: 5px solid map-get($colors, blackBorder);
+    @extend %shadow;
+  }
+
+  .recentlyPlayedSong__artist {
+    margin: 9px 0 2px 0;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: bold;
+  }
+
+  .recentlyPlayedSong__name {
+    text-align: center;
+    font-size: 0.6rem;
+    color: map-get($colors, greyText);
+  }
+}
+
+.recentlyPlayedSong:first-child {
+  margin-left: 15px;
+}

@@ -1,0 +1,17 @@
+.currentlyPlaying {
+  border: 1px solid green;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .currentlyPlaying {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 75px;
+  }
+}
+/*# sourceMappingURL=CurrentlyPlaying.css.map */

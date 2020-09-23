@@ -1,0 +1,7 @@
+.spotifyContent {
+  height: 100vh;
+  overflow-y: scroll;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#21272c), to(#15171a));
+  background-image: linear-gradient(to bottom, #21272c, #15171a);
+}
+/*# sourceMappingURL=SpotifyContent.css.map */

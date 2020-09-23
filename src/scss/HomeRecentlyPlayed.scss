@@ -1,0 +1,22 @@
+@import "./config.scss";
+
+.homeRecentlyPlayed {
+  color: map-get($colors, secondaryAccent);
+  margin-bottom: 10px;
+
+  .recently__title {
+    margin: 0 0 8px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .recentlyPlayed__songs {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  .recentlyPlayed__songs::-webkit-scrollbar {
+    display: none;
+  }
+}

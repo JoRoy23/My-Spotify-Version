@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,kBAAkB,CAAC;EACjB,KAAK,ECEY,OAAsB;CDWxC;;AAdD,AAGE,kBAHgB,CAGhB,eAAe,CAAC;EACd,MAAM,EAAE,aAAa;EACrB,SAAS,EAAE,MAAM;EACjB,WAAW,EAAE,IAAI;CAClB;;AAPH,AASE,kBATgB,CAShB,oBAAoB,CAAC;EACnB,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI;EACf,OAAO,EAAE,UAAU;CACpB",
+    "sources": [
+        "../scss/HomeNewReleases.scss",
+        "../scss/_config.scss"
+    ],
+    "names": [],
+    "file": "HomeNewReleases.css"
+}

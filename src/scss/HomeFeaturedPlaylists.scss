@@ -1,0 +1,22 @@
+@import "config.scss";
+
+.homeFeaturedPlaylists {
+  color: map-get($colors, secondaryAccent);
+  margin-bottom: 75px;
+
+  .featured__title {
+    margin: 0 0 8px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+  }
+
+  .featured__playlists {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  .featured__playlists::-webkit-scrollbar {
+    display: none;
+  }
+}

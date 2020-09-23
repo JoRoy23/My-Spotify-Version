@@ -1,0 +1,38 @@
+@import "config.scss";
+
+.homeContent {
+  height: 100vh;
+  overflow-y: scroll;
+  color: map-get($colors, secondaryAccent);
+  background-image: linear-gradient(
+    to bottom,
+    map-get($colors, primary),
+    rgba(21, 23, 26, 1)
+  );
+  @include ipad {
+    flex: 0.8;
+    overflow-y: scroll;
+    border: 1px solid red;
+  }
+
+  .setting__container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px 3px;
+
+    .setting {
+      padding: 6px;
+      display: flex;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid map-get($colors, blackBorder);
+      background-color: map-get($colors, primary);
+      @extend %shadow;
+    }
+
+    .setting:hover {
+      color: map-get($colors, primaryAccent);
+      @extend %shadowOnClick;
+    }
+  }
+}

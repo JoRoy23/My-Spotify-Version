@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/NavbarPlaylists.scss"
+    ],
+    "names": [],
+    "file": "NavbarPlaylists.css"
+}

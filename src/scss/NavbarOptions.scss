@@ -1,0 +1,66 @@
+@import "config.scss";
+
+.navbarOptions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  height: 100%;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  @include ipad {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 15px 20px;
+  }
+
+  &__list {
+    @include ipad {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    .navbarOptions__item {
+      @include ipad {
+        display: flex;
+        align-items: center;
+      }
+
+      span {
+        display: none;
+        @include ipad {
+          display: inline-block;
+          margin-left: 15px;
+          color: map-get($colors, secondaryAccent);
+        }
+      }
+
+      i {
+        padding: 7px;
+        display: flex;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid map-get($colors, blackBorder);
+        background-color: map-get($colors, primary);
+        color: map-get($colors, secondaryAccent);
+        @extend %shadow;
+      }
+
+      i:hover {
+        @extend %shadowOnClick;
+        color: map-get($colors, primaryAccent);
+      }
+    }
+
+    .navbarOptions__item--selected {
+      i {
+        @extend %shadowOnClick;
+        color: map-get($colors, primaryAccent);
+      }
+    }
+  }
+  &__list:last-child {
+    margin-bottom: 0px;
+  }
+}

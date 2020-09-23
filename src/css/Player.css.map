@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACgDE,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;ED7ClC,AAAD,aAAO,CAAC;IAEJ,OAAO,EAAE,IAAI;IACb,MAAM,EAAE,KAAK;GAEhB",
+    "sources": [
+        "../scss/Player.scss",
+        "../scss/_config.scss"
+    ],
+    "names": [],
+    "file": "Player.css"
+}

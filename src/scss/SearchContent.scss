@@ -1,0 +1,11 @@
+@import "./config.scss";
+
+.searchContent {
+  height: 100vh;
+  overflow-y: scroll;
+  background-image: linear-gradient(
+    to bottom,
+    map-get($colors, primary),
+    rgba(21, 23, 26, 1)
+  );
+}
