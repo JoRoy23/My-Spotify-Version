@@ -4,13 +4,17 @@ import { reducer } from "./reducer";
 // Initial state
 const initialState = {
   token: null,
-  // token:
-  //   "BQBI6DtUm46AK4Ud78WbQdr-3ldZydamVp2Vi0IscIn8hmH9_BTiUki0SR_NYZy0dCtN7NAxfb0coMwSwtV9pVRnfRRf0K5UcqpRJTukdtSB9zNZJ7Lz4OhJwPjX2Cnu9U42jNIEflK2BknMGaLQ5cvYXwHmp96PJUJo",
   user: null,
-  playlists: [],
+  myPlaylists: [],
   featuredPlaylists: [],
   newReleases: [],
   recentlyPlayed: [],
+  popPlaylists: [],
+  dancePlaylists: [],
+  hiphopPlaylists: [],
+  rockPlaylists: [],
+  countryPlaylists: [],
+  playlistSelected: [],
   isPlaying: false,
   item: null,
 };

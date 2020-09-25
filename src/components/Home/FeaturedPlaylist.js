@@ -1,15 +1,20 @@
 import React from "react";
-import { truncate } from "../../helpers";
+import { NavLink } from "react-router-dom";
 import "../../css/FeaturedPlaylist.css";
 
-function FeaturedPlaylist({ playlist }) {
+function FeaturedPlaylist({ playlist, onFeaturedPlaylistClick, id }) {
   return (
     <div className="featuredPlaylist">
-      <img src={playlist.images[0].url} alt={playlist.name} />
-      <p className="featuredPlaylist__title">{playlist.name}</p>
-      <p className="featuredPlaylist__description">
-        {truncate(playlist.description, 50)}
-      </p>
+      <NavLink to="/playlist">
+        <img
+          src={playlist.images[0].url}
+          alt={playlist.name}
+          onClick={() => {
+            onFeaturedPlaylistClick(id);
+          }}
+        />
+      </NavLink>
+      <p className="featuredPlaylist__artists"></p>
     </div>
   );
 }

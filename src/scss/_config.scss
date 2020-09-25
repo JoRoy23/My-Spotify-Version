@@ -3,14 +3,20 @@ $colors: (
   primary: rgba(33, 39, 44, 1),
   secondary: rgba(36, 41, 45, 1),
   primaryAccent: rgba(29, 184, 84, 1),
-  secondaryAccent: rgba(207, 207, 207, 1),
-  greyText: rgba(107, 107, 107, 1),
+  secondaryAccent: rgba(200, 200, 200, 1),
+  greyText: rgba(110, 110, 110, 1),
   blackBorder: rgba(29, 34, 38, 1),
+  backgroundPrimary: rgba(49, 55, 60, 1),
+  backgroundSecondary: rgba(0, 0, 0, 1),
+  navbarPrimary: rgba(43, 48, 52, 1),
+  navbarSecondary: rgba(0, 0, 0, 1),
+  navbarBorder: rgba(125, 126, 127, 0.2),
+  button: rgba(41, 46, 50, 1),
 );
 
 // Fonts configuration
-$font: (
-  primary: "Helvetica",
+$fonts: (
+  primary: "Arial",
 );
 
 // Buttons configuration
@@ -25,18 +31,40 @@ $font: (
   font-weight: bold;
   color: #fff;
   border-radius: 99px;
+  border: 2px solid map-get($colors, blackBorder);
+  background-color: map-get($colors, button);
 }
 
-%shadow {
-  box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.25),
+@mixin roundButton($padding, $fontSize) {
+  box-sizing: initial;
+  padding: $padding;
+  font-size: $fontSize;
+  border-radius: 50%;
+  border: 2px solid map-get($colors, blackBorder);
+  background-color: map-get($colors, button);
+  color: map-get($colors, secondaryAccent);
+}
+
+%footerButton {
+  box-sizing: initial;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid map-get($colors, blackBorder);
+  background-color: map-get($colors, primary);
+}
+
+// Shadow configuration
+@mixin shadow($blur) {
+  box-shadow: -1px -1px $blur rgba(56, 63, 69, 1),
     2px 2px 6px rgba(0, 0, 0, 0.8);
   transition: all 200ms ease;
 }
 
-%shadowOnClick {
-  box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.1),
+@mixin shadowOnClick($blur) {
+  box-shadow: -1px -1px $blur rgba(255, 255, 255, 0.1),
     2px 2px 6px rgba(0, 0, 0, 0.8),
-    inset -2px -2px 10px rgba(255, 255, 255, 0.05),
+    inset -2px -2px $blur rgba(255, 255, 255, 0.05),
     inset 2px 2px 6px rgba(0, 0, 0, 0.5);
   transition: all 200ms ease;
 }

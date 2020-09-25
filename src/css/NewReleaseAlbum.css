@@ -1,16 +1,10 @@
 .newReleaseAlbum {
-  -webkit-box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.25), 2px 2px 6px rgba(0, 0, 0, 0.8);
-          box-shadow: -1px -1px 10px rgba(255, 255, 255, 0.25), 2px 2px 6px rgba(0, 0, 0, 0.8);
-  -webkit-transition: all 200ms ease;
-  transition: all 200ms ease;
-}
-
-.newReleaseAlbum {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 45%;
           flex: 0 0 45%;
-  margin: 0 auto 15px;
+  margin: 0 auto 8px;
   padding-right: 1.4px;
+  cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -18,14 +12,31 @@
       -ms-flex-align: center;
           align-items: center;
   border-radius: 10px;
-  border: 2px solid #1d2226;
-  background-color: #24292d;
+  border: 2.5px solid #21272c;
+  background-color: #292e32;
+  -webkit-box-shadow: -1px -1px 6px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: -1px -1px 6px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+@media screen and (min-width: 768px) {
+  .newReleaseAlbum {
+    margin: 0 auto 12px;
+    border: 3.5px solid #21272c;
+  }
 }
 
 .newReleaseAlbum img {
-  width: 45px;
+  width: 40px;
   height: 100%;
   border-radius: 10px 0 0 10px;
+}
+
+@media screen and (min-width: 768px) {
+  .newReleaseAlbum img {
+    width: 60px;
+  }
 }
 
 .newReleaseAlbum .newReleaseAlbum__title {
@@ -35,11 +46,25 @@
   line-height: 1.3;
 }
 
+@media screen and (min-width: 768px) {
+  .newReleaseAlbum .newReleaseAlbum__title {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+}
+
 .newReleaseAlbum:nth-child(5) {
   margin-bottom: 0;
 }
 
 .newReleaseAlbum:last-child {
   margin-bottom: 0;
+}
+
+.newReleaseAlbum:hover {
+  -webkit-box-shadow: -1px -1px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 6px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -1px -1px 6px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 6px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 /*# sourceMappingURL=NewReleaseAlbum.css.map */

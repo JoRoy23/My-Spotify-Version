@@ -1,0 +1,62 @@
+@import "./config.scss";
+
+.header {
+  display: none;
+  @include ipad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-family: map-get($fonts, primary);
+    color: map-get($colors, secondaryAccent);
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    padding: 4px 5px;
+    overflow-x: hidden;
+    border-radius: 10px;
+    border: 2px solid map-get($colors, primary);
+    background-color: map-get($colors, button);
+    @include shadow(6px);
+
+    .header__icon {
+      margin-right: 5px;
+    }
+
+    input {
+      width: 210px;
+      font-size: 0.75rem;
+      color: map-get($colors, secondaryAccent);
+      border: none;
+      background-color: map-get($colors, button);
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    .header__avatar {
+      margin-right: 5px;
+      width: 26px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid map-get($colors, blackBorder);
+      @include shadow(6px);
+    }
+
+    .header__username {
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}

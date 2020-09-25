@@ -1,0 +1,25 @@
+@import "config.scss";
+
+.navbarPlaylists {
+  display: none;
+  @include ipad {
+    display: block;
+    padding: 15px 20px;
+    overflow-x: hidden;
+    font-weight: bold;
+    font-family: map-get($fonts, primary);
+    color: map-get($colors, secondaryAccent);
+  }
+
+  &__title {
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+  }
+
+  &__underline {
+    width: 90%;
+    height: 2px;
+    margin-bottom: 20px;
+    background-color: map-get($colors, navbarBorder);
+  }
+}

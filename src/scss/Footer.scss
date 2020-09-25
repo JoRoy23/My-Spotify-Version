@@ -1,0 +1,86 @@
+@import "config.scss";
+
+.footer {
+  display: none;
+  @include ipad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 90px;
+    padding: 10px 20px;
+    color: map-get($colors, secondaryAccent);
+    background-image: linear-gradient(
+      to bottom,
+      map-get($colors, navbarPrimary),
+      map-get($colors, navbarSecondary)
+    );
+    @include shadow(3px);
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    img {
+    }
+  }
+
+  &__center {
+    display: flex;
+    align-items: center;
+
+    .footer__button {
+      margin-right: 15px;
+      @extend %footerButton;
+      @include shadow(3px);
+    }
+
+    .footer__button:hover {
+      @include shadowOnClick(3px);
+    }
+
+    .footer__button--small {
+      padding: 6px;
+      font-size: 15px;
+    }
+
+    .footer__button--medium {
+      padding: 10px;
+      font-size: 20px;
+    }
+
+    .footer__button--pause,
+    .footer__button--play {
+      padding: 13px;
+      font-size: 25px;
+    }
+
+    .footer__button--pause {
+      @include shadowOnClick(3px);
+      border: 2px solid rgba(2, 160, 67, 1);
+      background-color: map-get($colors, primaryAccent);
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+    .footer__icon {
+      margin-right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: map-get($colors, greyText);
+    }
+
+    .footer__slider {
+      width: 75px;
+      color: map-get($colors, primaryAccent);
+    }
+  }
+}

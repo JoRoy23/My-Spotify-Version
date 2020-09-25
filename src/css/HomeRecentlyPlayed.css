@@ -1,15 +1,28 @@
 .homeRecentlyPlayed {
-  color: #cfcfcf;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
+  font-family: "Arial";
+  color: #c8c8c8;
 }
 
-.homeRecentlyPlayed .recently__title {
+@media screen and (min-width: 768px) {
+  .homeRecentlyPlayed {
+    margin-bottom: 50px;
+  }
+}
+
+.homeRecentlyPlayed .homeRecentlyPlayed__title {
   margin: 0 0 8px 20px;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   font-weight: bold;
 }
 
-.homeRecentlyPlayed .recentlyPlayed__songs {
+@media screen and (min-width: 768px) {
+  .homeRecentlyPlayed .homeRecentlyPlayed__title {
+    font-size: 1.5rem;
+  }
+}
+
+.homeRecentlyPlayed .homeRecentlyPlayed__songs {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,7 +30,7 @@
   scrollbar-width: none;
 }
 
-.homeRecentlyPlayed .recentlyPlayed__songs::-webkit-scrollbar {
+.homeRecentlyPlayed .homeRecentlyPlayed__songs::-webkit-scrollbar {
   display: none;
 }
 /*# sourceMappingURL=HomeRecentlyPlayed.css.map */

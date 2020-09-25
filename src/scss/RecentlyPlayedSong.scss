@@ -1,27 +1,31 @@
 @import "./config.scss";
 
 .recentlyPlayedSong {
-  margin: 2px 12px 0 0;
-  padding: 5px;
+  margin-right: 5px;
+  padding: 7px 5px 0;
 
   img {
-    width: 120px;
+    width: 115px;
+    cursor: pointer;
     border-radius: 50%;
     border: 5px solid map-get($colors, blackBorder);
-    @extend %shadow;
+    @include shadow(6px);
+    @include ipad {
+      width: 190px;
+      border: 7px solid map-get($colors, blackBorder);
+    }
   }
 
   .recentlyPlayedSong__artist {
-    margin: 9px 0 2px 0;
+    margin: 6px 0 2px 0;
+    cursor: pointer;
     text-align: center;
     font-size: 0.75rem;
-    font-weight: bold;
-  }
-
-  .recentlyPlayedSong__name {
-    text-align: center;
-    font-size: 0.6rem;
-    color: map-get($colors, greyText);
+    font-weight: 500;
+    color: map-get($colors, secondaryAccent);
+    @include ipad {
+      font-size: 0.9rem;
+    }
   }
 }
 

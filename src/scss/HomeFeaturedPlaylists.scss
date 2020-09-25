@@ -1,22 +1,29 @@
 @import "config.scss";
 
 .homeFeaturedPlaylists {
-  color: map-get($colors, secondaryAccent);
   margin-bottom: 75px;
-
-  .featured__title {
-    margin: 0 0 8px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
+  font-weight: bold;
+  font-family: map-get($fonts, primary);
+  color: map-get($colors, secondaryAccent);
+  @include ipad {
+    margin-bottom: 100px;
   }
 
-  .featured__playlists {
+  .homeFeaturedPlaylists__title {
+    margin: 0 0 8px 20px;
+    font-size: 1.3rem;
+    @include ipad {
+      font-size: 1.5rem;
+    }
+  }
+
+  .homeFeaturedPlaylists__playlists {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
   }
 
-  .featured__playlists::-webkit-scrollbar {
+  .homeFeaturedPlaylists__playlists::-webkit-scrollbar {
     display: none;
   }
 }

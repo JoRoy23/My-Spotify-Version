@@ -1,0 +1,36 @@
+.homeRockPlaylists {
+  margin-bottom: 75px;
+  font-weight: bold;
+  font-family: "Arial";
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRockPlaylists {
+    margin-bottom: 100px;
+  }
+}
+
+.homeRockPlaylists .homeRockPlaylists__title {
+  margin: 0 0 8px 20px;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRockPlaylists .homeRockPlaylists__title {
+    font-size: 1.5rem;
+  }
+}
+
+.homeRockPlaylists .homeRockPlaylists__playlists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.homeRockPlaylists .homeRockPlaylists__playlists::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=HomeRockPlaylists.css.map */

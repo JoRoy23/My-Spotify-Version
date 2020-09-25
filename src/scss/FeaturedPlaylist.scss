@@ -1,25 +1,29 @@
 @import "./config.scss";
 
 .featuredPlaylist {
-  margin: 2px 12px 0 0;
-  padding: 5px;
+  margin-right: 5px;
+  padding: 7px 5px 0;
 
   img {
-    width: 120px;
+    width: 145px;
+    cursor: pointer;
     border-radius: 15px;
     border: 5px solid map-get($colors, blackBorder);
-    @extend %shadow;
+    @include shadow(6px);
+    @include ipad {
+      width: 230px;
+      border: 7px solid map-get($colors, blackBorder);
+    }
   }
 
-  .featuredPlaylist__title {
+  .featuredPlaylist__artists {
     margin: 9px 0 2px 0;
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: bold;
-  }
-
-  .featuredPlaylist__description {
-    font-size: 0.6rem;
-    color: map-get($colors, greyText);
+    color: white;
+    @include ipad {
+      font-size: 0.9rem;
+    }
   }
 }
 

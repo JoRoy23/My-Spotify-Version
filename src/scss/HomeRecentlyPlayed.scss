@@ -1,22 +1,29 @@
 @import "./config.scss";
 
 .homeRecentlyPlayed {
+  margin-bottom: 40px;
+  font-family: map-get($fonts, primary);
   color: map-get($colors, secondaryAccent);
-  margin-bottom: 10px;
-
-  .recently__title {
-    margin: 0 0 8px 20px;
-    font-size: 1.1rem;
-    font-weight: bold;
+  @include ipad {
+    margin-bottom: 50px;
   }
 
-  .recentlyPlayed__songs {
+  .homeRecentlyPlayed__title {
+    margin: 0 0 8px 20px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    @include ipad {
+      font-size: 1.5rem;
+    }
+  }
+
+  .homeRecentlyPlayed__songs {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
   }
 
-  .recentlyPlayed__songs::-webkit-scrollbar {
+  .homeRecentlyPlayed__songs::-webkit-scrollbar {
     display: none;
   }
 }

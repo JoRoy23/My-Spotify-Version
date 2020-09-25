@@ -1,0 +1,19 @@
+.myPlaylistName {
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Arial";
+  color: #6e6e6e;
+}
+
+.myPlaylistName:last-child {
+  margin-bottom: 0;
+}
+
+.myPlaylistName:hover {
+  color: #c8c8c8;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+/*# sourceMappingURL=MyPlaylistName.css.map */

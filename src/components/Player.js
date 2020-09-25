@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar/Navbar";
 import Content from "./Content";
-import CurrentlyPlaying from "./CurrentlyPlaying";
+import Footer from "./Footer";
 import "../css/Player.css";
 
 function Player() {
@@ -12,7 +12,7 @@ function Player() {
         <Content />
       </div>
       <footer className="player__footer">
-        <CurrentlyPlaying />
+        <Footer />
       </footer>
     </div>
   );

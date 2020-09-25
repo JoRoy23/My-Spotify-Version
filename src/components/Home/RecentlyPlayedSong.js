@@ -1,20 +1,11 @@
 import React from "react";
 import "../../css/RecentlyPlayedSong.css";
 
-function RecentlyPlayedSong({ song }) {
-  // Get the artists of a song
-  const getArtists = (song) => {
-    const artistsList = song.track.album.artists.map((artist) => {
-      return artist.name;
-    });
-    return artistsList.join(" & ");
-  };
-
+function RecentlyPlayedSong({ album, getArtists }) {
   return (
     <div className="recentlyPlayedSong">
-      <img src={song.track.album.images[1].url} alt={song.track.album.name} />
-      <p className="recentlyPlayedSong__artist">{getArtists(song)}</p>
-      <p className="recentlyPlayedSong__name">{song.track.name}</p>
+      <img src={album.images[1].url} alt={album.name} />
+      <h4 className="recentlyPlayedSong__artist">{getArtists(album, 15)}</h4>
     </div>
   );
 }

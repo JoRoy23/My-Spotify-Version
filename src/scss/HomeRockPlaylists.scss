@@ -1,0 +1,29 @@
+@import "config.scss";
+
+.homeRockPlaylists {
+  margin-bottom: 75px;
+  font-weight: bold;
+  font-family: map-get($fonts, primary);
+  color: map-get($colors, secondaryAccent);
+  @include ipad {
+    margin-bottom: 100px;
+  }
+
+  .homeRockPlaylists__title {
+    margin: 0 0 8px 20px;
+    font-size: 1.3rem;
+    @include ipad {
+      font-size: 1.5rem;
+    }
+  }
+
+  .homeRockPlaylists__playlists {
+    display: flex;
+    overflow-x: scroll;
+    scrollbar-width: none;
+  }
+
+  .homeRockPlaylists__playlists::-webkit-scrollbar {
+    display: none;
+  }
+}

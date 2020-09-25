@@ -5,7 +5,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import LibraryMusicIcon from "@material-ui/icons/LibraryMusic";
 import "../../css/NavbarOptions.css";
 
-const NavbarOptions = () => {
+function NavbarOptions() {
   return (
     <React.Fragment>
       <ul className="navbarOptions">
@@ -16,10 +16,8 @@ const NavbarOptions = () => {
             activeClassName="navbarOptions__item--selected"
             to="/"
           >
-            <i>
-              <HomeIcon style={{ fontSize: "20px" }} />
-            </i>
-            <span>Home</span>
+            <HomeIcon className="navbarOptions__icon" />
+            <h2 className="navbarOptions__text">Home</h2>
           </NavLink>
         </li>
         <li className="navbarOptions__list">
@@ -28,10 +26,8 @@ const NavbarOptions = () => {
             activeClassName="navbarOptions__item--selected"
             to="/search"
           >
-            <i>
-              <SearchIcon style={{ fontSize: "20px" }} />
-            </i>
-            <span>Search</span>
+            <SearchIcon className="navbarOptions__icon" />
+            <h2 className="navbarOptions__text">Search</h2>
           </NavLink>
         </li>
         <li className="navbarOptions__list">
@@ -40,10 +36,8 @@ const NavbarOptions = () => {
             activeClassName="navbarOptions__item--selected"
             to="/library"
           >
-            <i>
-              <LibraryMusicIcon style={{ fontSize: "20px" }} />
-            </i>
-            <span>Library</span>
+            <LibraryMusicIcon className="navbarOptions__icon" />
+            <h2 className="navbarOptions__text">Library</h2>
           </NavLink>
         </li>
         <li className="navbarOptions__list">
@@ -52,15 +46,13 @@ const NavbarOptions = () => {
             activeClassName="navbarOptions__item--selected"
             to="/spotify"
           >
-            <i>
-              <LibraryMusicIcon style={{ fontSize: "20px" }} />
-            </i>
-            <span>Spotify</span>
+            <LibraryMusicIcon className="navbarOptions__icon" />
+            <h2 className="navbarOptions__text">Spotify</h2>
           </NavLink>
         </li>
       </ul>
     </React.Fragment>
   );
-};
+}
 
 export default NavbarOptions;

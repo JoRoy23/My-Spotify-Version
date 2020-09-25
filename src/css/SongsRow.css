@@ -1,0 +1,78 @@
+.songsRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.songsRow__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.songsRow__left .songsRow__image {
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: 3px solid #1d2226;
+  -webkit-box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.songsRow__left .songsRow__informations .songsRow__song {
+  margin-bottom: 3px;
+  font-size: 0.7rem;
+  color: #c8c8c8;
+}
+
+.songsRow__left .songsRow__informations .songsRow__artist {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #6e6e6e;
+}
+
+.songsRow .songsRow__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+  padding: 6px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 2px solid #1d2226;
+  background-color: #292e32;
+  color: #c8c8c8;
+  -webkit-box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.songsRow .songsRow__icon:hover {
+  -webkit-box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.songsRow:last-child {
+  margin-bottom: 90px;
+}
+/*# sourceMappingURL=SongsRow.css.map */

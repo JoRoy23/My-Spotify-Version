@@ -1,0 +1,70 @@
+.addPlaylist {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .addPlaylist {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: absolute;
+    bottom: 90px;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    border-top: 2px solid rgba(125, 126, 127, 0.2);
+    font-weight: bold;
+    font-family: "Arial";
+  }
+}
+
+.addPlaylist__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+  padding: 4px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 2px solid #1d2226;
+  background-color: #292e32;
+  color: #c8c8c8;
+  -webkit-box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: -1px -1px 3px #383f45, 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.addPlaylist__icon:hover {
+  -webkit-box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.addPlaylist__icon:hover + .addPlaylist__title {
+  color: #c8c8c8;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+
+.addPlaylist__title {
+  margin-left: 15px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #6e6e6e;
+}
+
+.addPlaylist__title:hover ~ .addPlaylist__icon {
+  -webkit-box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+          box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1), 2px 2px 6px rgba(0, 0, 0, 0.8), inset -2px -2px 3px rgba(255, 255, 255, 0.05), inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=AddPlaylist.css.map */

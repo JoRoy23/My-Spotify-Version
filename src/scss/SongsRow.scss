@@ -1,0 +1,52 @@
+@import "./config.scss";
+
+.songsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  margin-bottom: 15px;
+  font-weight: bold;
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    .songsRow__image {
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 3px solid map-get($colors, blackBorder);
+      @include shadow(3px);
+    }
+
+    .songsRow__informations {
+      .songsRow__song {
+        margin-bottom: 3px;
+        font-size: 0.7rem;
+        color: map-get($colors, secondaryAccent);
+      }
+
+      .songsRow__artist {
+        font-size: 0.7rem;
+        font-weight: 500;
+        color: map-get($colors, greyText);
+      }
+    }
+  }
+
+  .songsRow__icon {
+    display: flex;
+    cursor: pointer;
+    @include roundButton(6px, 20px);
+    @include shadow(3px);
+  }
+
+  .songsRow__icon:hover {
+    @include shadowOnClick(3px);
+  }
+}
+.songsRow:last-child {
+  margin-bottom: 90px;
+}

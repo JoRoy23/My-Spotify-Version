@@ -1,25 +1,33 @@
 import React, { useContext } from "react";
+import { SpotifyContext } from "../../ContextApi/SpotifyState";
+import Header from "./Header";
 import HomeFeaturedPlaylists from "./HomeFeaturedPlaylists";
 import HomeRecentlyPlayed from "./HomeRecentlyPlayed";
 import HomeNewReleases from "./HomeNewReleases";
-import { SpotifyContext } from "../../ContextApi/SpotifyState";
+import HomePopPlaylists from "./HomePopPlaylists";
+import HomeDancePlaylists from "./HomeDancePlaylists";
+import HomeHiphopPlaylists from "./HomeHiphopPlaylists";
+import HomeRockPlaylists from "./HomeRockPlaylists";
+import HomeCountryPlaylists from "./HomeCountryPlaylists";
 import SettingsIcon from "@material-ui/icons/Settings";
 import "../../css/HomeContent.css";
 
 function HomeContent() {
-  const [{ featuredPlaylists, recentlyPlayed, newReleases }] = useContext(
-    SpotifyContext
-  );
+  const [state] = useContext(SpotifyContext);
   return (
     <div className="homeContent">
+      <Header />
       <div className="setting__container">
-        <a className="setting">
-          <SettingsIcon style={{ fontSize: "16px" }} />
-        </a>
+        <SettingsIcon className="setting__icon" />
       </div>
-      <HomeNewReleases newReleases={newReleases} />
-      <HomeRecentlyPlayed recentlyPlayed={recentlyPlayed} />
-      <HomeFeaturedPlaylists featuredPlaylists={featuredPlaylists} />
+      <HomeNewReleases newReleases={state.newReleases} />
+      <HomeRecentlyPlayed recentlyPlayed={state.recentlyPlayed} />
+      <HomeFeaturedPlaylists featuredPlaylists={state.featuredPlaylists} />
+      <HomePopPlaylists popPlaylists={state.popPlaylists} />
+      <HomeDancePlaylists dancePlaylists={state.dancePlaylists} />
+      <HomeHiphopPlaylists hiphopPlaylists={state.hiphopPlaylists} />
+      <HomeRockPlaylists rockPlaylists={state.rockPlaylists} />
+      <HomeCountryPlaylists countryPlaylists={state.countryPlaylists} />
     </div>
   );
 }

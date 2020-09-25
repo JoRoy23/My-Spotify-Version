@@ -6,33 +6,31 @@
   color: map-get($colors, secondaryAccent);
   background-image: linear-gradient(
     to bottom,
-    map-get($colors, primary),
-    rgba(21, 23, 26, 1)
+    map-get($colors, backgroundPrimary),
+    map-get($colors, backgroundSecondary)
   );
   @include ipad {
-    flex: 0.8;
+    flex-grow: 1;
     overflow-y: scroll;
-    border: 1px solid red;
   }
 
   .setting__container {
     display: flex;
     justify-content: flex-end;
-    padding: 20px 20px 3px;
-
-    .setting {
-      padding: 6px;
-      display: flex;
-      cursor: pointer;
-      border-radius: 50%;
-      border: 2px solid map-get($colors, blackBorder);
-      background-color: map-get($colors, primary);
-      @extend %shadow;
+    padding: 20px 20px 10px;
+    @include ipad {
+      display: none;
     }
 
-    .setting:hover {
-      color: map-get($colors, primaryAccent);
-      @extend %shadowOnClick;
+    .setting__icon {
+      display: flex;
+      cursor: pointer;
+      @include roundButton(6px, 18px);
+      @include shadow(6px);
+    }
+
+    .setting__icon:hover {
+      @include shadowOnClick(10px);
     }
   }
 }

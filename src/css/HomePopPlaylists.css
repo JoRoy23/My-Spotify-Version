@@ -1,0 +1,36 @@
+.homePopPlaylists {
+  margin-bottom: 75px;
+  font-weight: bold;
+  font-family: "Arial";
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .homePopPlaylists {
+    margin-bottom: 100px;
+  }
+}
+
+.homePopPlaylists .homePopPlaylists__title {
+  margin: 0 0 8px 20px;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .homePopPlaylists .homePopPlaylists__title {
+    font-size: 1.5rem;
+  }
+}
+
+.homePopPlaylists .homePopPlaylists__playlists {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.homePopPlaylists .homePopPlaylists__playlists::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=HomePopPlaylists.css.map */
