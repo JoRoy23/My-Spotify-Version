@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../css/FeaturedPlaylist.css";
 
-function FeaturedPlaylist({ playlist, onFeaturedPlaylistClick, id }) {
+function FeaturedPlaylist({ id, playlist, onFeaturedPlaylistClick }) {
   return (
     <div className="featuredPlaylist">
       <NavLink to="/playlist">

@@ -14,26 +14,11 @@
     overflow-y: scroll;
   }
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+  .songsRow__container {
+    padding-bottom: 80px;
+  }
 
-    .header__icons {
-      display: flex;
-      cursor: pointer;
-      @include roundButton(6px, 20px);
-      @include shadow(3px);
-    }
-    .header__icons:hover {
-      @include shadowOnClick(3px);
-    }
-
-    .header__right {
-      .header__icons:first-child {
-        margin-right: 15px;
-      }
-    }
+  .songsRow__container--bigPadding {
+    padding-bottom: 150px;
   }
 }

@@ -23,6 +23,8 @@
     }
 
     .navbarOptions__item {
+      cursor: default;
+
       @include ipad {
         display: flex;
         align-items: center;
@@ -42,7 +44,6 @@
 
       .navbarOptions__icon {
         display: flex;
-        cursor: pointer;
         @include roundButton(7px, 20px);
         @include shadow(3px);
       }

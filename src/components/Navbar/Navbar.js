@@ -7,9 +7,20 @@ import SpotifyLogo from "../../images/spotifyLogo.png";
 import "../../css/Navbar.css";
 
 function Navbar() {
-  const [{ myPlaylists }] = useContext(SpotifyContext);
+  const [{ myPlaylists, songSelected }] = useContext(SpotifyContext);
+
+  // Style the border of the navigation bar
+  const styleNavbar = () => {
+    const navbarStyle =
+      songSelected.length !== 0
+        ? { borderRadius: "0" }
+        : { borderRadius: "20px 20px 0 0" };
+
+    return navbarStyle;
+  };
+
   return (
-    <header className="navbar">
+    <header className="navbar" style={styleNavbar()}>
       <img className="navbar__logo" src={SpotifyLogo} alt="Spotify logo" />
       <NavbarOptions />
       <NavbarPlaylists myPlaylists={myPlaylists} />

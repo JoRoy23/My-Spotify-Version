@@ -1,0 +1,69 @@
+@import "./config.scss";
+
+.playlistSelectedHeader {
+  font-family: map-get($fonts, primary);
+  font-weight: bold;
+
+  .header__iconsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .header__icons {
+      display: flex;
+      @include roundButton(7px, 20px);
+      @include shadow(3px);
+    }
+    .header__icons:hover {
+      @include shadowOnClick(3px);
+    }
+
+    .header__right {
+      .header__icons:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .header__playlistCover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .header__coverImage {
+      width: 160px;
+      margin: 10px 0 15px;
+      border-radius: 15px;
+      border: 5px solid map-get($colors, blackBorder);
+      @include shadow(6px);
+    }
+
+    .header__playlistName {
+      margin-bottom: 3px;
+      font-size: 1.3rem;
+      color: map-get($colors, secondaryAccent);
+    }
+
+    .header__playlistFollowers {
+      margin-bottom: 15px;
+      font-size: 0.7rem;
+      color: map-get($colors, greyText);
+    }
+
+    .header__playButton {
+      padding: 7px 45px;
+      font-size: 0.85rem;
+      border-radius: 30px;
+      border: 3px solid map-get($colors, greenBorder);
+      background-color: map-get($colors, primaryAccent);
+      color: map-get($colors, secondaryAccent);
+      @include shadow(3px);
+    }
+
+    .header__playButton:hover {
+      @include shadowOnClick(3px);
+    }
+  }
+}

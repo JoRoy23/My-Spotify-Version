@@ -1,0 +1,70 @@
+@import "./config.scss";
+
+.songSelectedBar {
+  position: fixed;
+  bottom: -200px;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 4px solid map-get($colors, backgroundSecondary);
+  background-color: map-get($colors, navbarPrimary);
+  font-family: map-get($fonts, primary);
+  @include shadow(3px);
+  @include ipad {
+    display: none;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    .songSelected__albumImage {
+      width: 48px;
+      height: 48px;
+      margin-right: 10px;
+      border-radius: 5px;
+      border: 3px solid map-get($colors, blackBorder);
+      @include shadow(3px);
+    }
+
+    .songSelected__songInformation {
+      .songSelected__song {
+        margin-bottom: 3px;
+        font-size: 0.85rem;
+        font-weight: bold;
+        color: map-get($colors, secondaryAccent);
+      }
+
+      .songSelected__artists {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: map-get($colors, greyText);
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+
+    .songSelected__icon {
+      @include roundButton(7px, 20px);
+      @include shadow(3px);
+    }
+
+    .songSelected__icon:first-child {
+      margin-right: 25px;
+    }
+
+    .songSelected__icon:hover {
+      @include shadowOnClick(3px);
+    }
+  }
+}
+
+.songSelectedBar--visible {
+  bottom: 65px;
+  transition: bottom 200ms ease;
+}

@@ -5,15 +5,23 @@ import FeaturedPlaylist from "./FeaturedPlaylist";
 import "../../css/HomeFeaturedPlaylists.css";
 
 function HomeFeaturedPlaylists({ featuredPlaylists }) {
-  const [{ playlistSelected }, dispatch] = useContext(SpotifyContext);
-  console.log(playlistSelected);
+  const [state, dispatch] = useContext(SpotifyContext);
 
   // Set the information of the featured playlist selected
   const handleFeaturedPlaylistClick = (id) => {
-    spotifyApi.getPlaylistTracks(id).then((tracks) => {
+    // Fetch the tracks of the playlist
+    spotifyApi.getPlaylistTracks(id).then((songs) => {
       dispatch({
-        type: "SET_PLAYLIST-SELECTED",
-        playlistSelected: tracks,
+        type: "SET_SONGS-OF-PLAYLIST-SELECTED",
+        songsOfPlaylistSelected: songs,
+      });
+    });
+
+    // Fetch the info of the playlist album
+    spotifyApi.getPlaylist(id).then((playlist) => {
+      dispatch({
+        type: "SET_INFO-OF-PLAYLIST-SELECTED",
+        infoOfPlaylistSelected: playlist,
       });
     });
   };

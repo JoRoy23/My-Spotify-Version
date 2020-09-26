@@ -1,28 +1,30 @@
 import React, { createContext, useReducer } from "react";
 import { reducer } from "./reducer";
 
-// Initial state
+// Initial state of our Spotify application
 const initialState = {
-  token: null,
-  user: null,
-  myPlaylists: [],
-  featuredPlaylists: [],
-  newReleases: [],
-  recentlyPlayed: [],
-  popPlaylists: [],
-  dancePlaylists: [],
-  hiphopPlaylists: [],
-  rockPlaylists: [],
-  countryPlaylists: [],
-  playlistSelected: [],
+  token: null, // User token
+  user: null, // User information
+  myPlaylists: [], // My playlists for the navbar
+  featuredPlaylists: [], // Popular playlists for the home menu
+  newReleases: [], // New release for the home menu
+  recentlyPlayed: [], // Recently played albums for the home menu
+  popPlaylists: [], // Pop playlists for the home menu
+  dancePlaylists: [], // Dance/Electronic playlists for the home menu
+  hiphopPlaylists: [], // Hip-hop playlists for the home menu
+  rockPlaylists: [], // Rock playlists for the home menu
+  countryPlaylists: [], // Country playlists for the home menu
+  songsOfPlaylistSelected: [], // Songs of a selected playlist
+  infoOfPlaylistSelected: [], // Info of a selected playlist
+  songSelected: [], // Song selected
   isPlaying: false,
   item: null,
 };
 
-// Create context
+// Create context object
 export const SpotifyContext = createContext(initialState);
 
-// Provider component
+// Provider component of our context
 export const SpotifyProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 

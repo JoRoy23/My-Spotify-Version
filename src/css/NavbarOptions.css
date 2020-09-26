@@ -35,6 +35,10 @@
   }
 }
 
+.navbarOptions__list .navbarOptions__item {
+  cursor: default;
+}
+
 @media screen and (min-width: 768px) {
   .navbarOptions__list .navbarOptions__item {
     display: -webkit-box;
@@ -65,7 +69,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
   -webkit-box-sizing: initial;
           box-sizing: initial;
   padding: 7px;

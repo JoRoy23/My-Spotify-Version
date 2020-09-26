@@ -23,8 +23,18 @@ export const reducer = (state, action) => {
       return { ...state, rockPlaylists: action.rockPlaylists };
     case "SET_COUNTRY-PLAYLISTS":
       return { ...state, countryPlaylists: action.countryPlaylists };
-    case "SET_PLAYLIST-SELECTED":
-      return { ...state, playlistSelected: action.playlistSelected };
+    case "SET_SONGS-OF-PLAYLIST-SELECTED":
+      return {
+        ...state,
+        songsOfPlaylistSelected: action.songsOfPlaylistSelected,
+      };
+    case "SET_INFO-OF-PLAYLIST-SELECTED":
+      return {
+        ...state,
+        infoOfPlaylistSelected: action.infoOfPlaylistSelected,
+      };
+    case "SET_SONG-SELECTED":
+      return { ...state, songSelected: action.songSelected };
     case "SET_PLAY-BUTTON":
       return { ...state, isPlaying: !action.isPlaying };
     default:
