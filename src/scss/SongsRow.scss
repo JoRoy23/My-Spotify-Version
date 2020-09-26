@@ -20,7 +20,11 @@
       margin-right: 10px;
       border-radius: 5px;
       border: 3px solid map-get($colors, blackBorder);
-      @include shadow(3px);
+      @extend %shadow;
+      @include ipad {
+        width: 60px;
+        height: 60px;
+      }
     }
 
     .songsRow__informations {
@@ -28,12 +32,18 @@
         margin-bottom: 3px;
         font-size: 0.85rem;
         color: map-get($colors, secondaryAccent);
+        @include ipad {
+          font-size: 0.9rem;
+        }
       }
 
       .songsRow__artist {
         font-size: 0.8rem;
         font-weight: 500;
         color: map-get($colors, greyText);
+        @include ipad {
+          font-size: 0.85rem;
+        }
       }
     }
   }
@@ -42,10 +52,10 @@
     display: flex;
     cursor: default;
     @include roundButton(6px, 20px);
-    @include shadow(3px);
+    @extend %shadow;
   }
 
   .songsRow__icon:hover {
-    @include shadowOnClick(3px);
+    @extend %shadowOnClick;
   }
 }

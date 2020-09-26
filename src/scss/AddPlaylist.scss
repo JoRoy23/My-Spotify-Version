@@ -17,13 +17,12 @@
 
   &__icon {
     display: flex;
-    cursor: pointer;
     @include roundButton(4px, 20px);
-    @include shadow(3px);
+    @extend %shadow;
   }
 
   &__icon:hover {
-    @include shadowOnClick(3px);
+    @extend %shadowOnClick;
   }
 
   &__icon:hover + &__title {
@@ -33,18 +32,17 @@
 
   &__title {
     margin-left: 15px;
-    cursor: pointer;
+    cursor: default;
     font-size: 0.9rem;
     color: map-get($colors, greyText);
   }
 
-  // &__title:hover {
-  //   color: map-get($colors, secondaryAccent);
-  //   transition: color 200ms ease;
-  // }
+  &__title:hover {
+    color: map-get($colors, secondaryAccent);
+    transition: color 200ms ease;
+  }
 
   &__title:hover ~ &__icon {
-    @include shadowOnClick(3px);
-    border: 1px solid red;
+    @extend %shadowOnClick;
   }
 }

@@ -13,6 +13,7 @@
 
 .homeDancePlaylists .homeDancePlaylists__title {
   margin: 0 0 8px 20px;
+  cursor: default;
   font-size: 1.3rem;
 }
 

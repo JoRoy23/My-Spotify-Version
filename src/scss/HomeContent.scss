@@ -23,14 +23,12 @@
     }
 
     .setting__icon {
-      display: flex;
-      cursor: pointer;
       @include roundButton(6px, 18px);
-      @include shadow(6px);
+      @extend %shadow;
     }
 
     .setting__icon:hover {
-      @include shadowOnClick(10px);
+      @extend %shadowOnClick;
     }
   }
 }

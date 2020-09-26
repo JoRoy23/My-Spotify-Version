@@ -9,7 +9,7 @@
     cursor: pointer;
     border-radius: 15px;
     border: 5px solid map-get($colors, blackBorder);
-    @include shadow(6px);
+    @extend %shadow;
     @include ipad {
       width: 230px;
       border: 7px solid map-get($colors, blackBorder);

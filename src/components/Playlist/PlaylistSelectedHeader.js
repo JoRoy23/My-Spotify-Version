@@ -26,7 +26,8 @@ function PlaylistSelectedHeader({
         />
         <h2 className="header__playlistName">{playlistName}</h2>
         <p className="header__playlistFollowers">
-          {`BY SPOTIFY ${playlistFollowers} FOLLOWERS`}
+          BY SPOTIFY <span className="header__dot">•</span> {playlistFollowers}{" "}
+          FOLLOWERS
         </p>
         <a className="header__playButton">PLAY</a>
       </div>

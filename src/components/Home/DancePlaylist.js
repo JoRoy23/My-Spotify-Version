@@ -1,10 +1,20 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
+import { customizePlaylistUrl } from "../../helpers";
 import "../../css/DancePlaylist.css";
 
-function DancePlaylist({ playlist }) {
+function DancePlaylist({ id, playlist, onDancePlaylistClick }) {
   return (
     <div className="dancePlaylist">
-      <img src={playlist.images[0].url} alt={playlist.name} />
+      <NavLink to={customizePlaylistUrl("dance-electronic", playlist.name)}>
+        <img
+          src={playlist.images[0].url}
+          alt={playlist.name}
+          onClick={() => {
+            onDancePlaylistClick(id);
+          }}
+        />
+      </NavLink>
       <p className="dancePlaylist__artists"></p>
     </div>
   );

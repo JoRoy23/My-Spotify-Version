@@ -21,7 +21,7 @@
     border-radius: 10px;
     border: 2px solid map-get($colors, primary);
     background-color: map-get($colors, button);
-    @include shadow(6px);
+    @extend %shadow;
 
     .header__icon {
       margin-right: 5px;
@@ -50,11 +50,11 @@
       cursor: pointer;
       border-radius: 50%;
       border: 2px solid map-get($colors, blackBorder);
-      @include shadow(6px);
+      @extend %shadow;
     }
 
     .header__username {
-      cursor: pointer;
+      cursor: default;
       font-size: 0.9rem;
       font-weight: 500;
     }

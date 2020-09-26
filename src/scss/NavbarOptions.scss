@@ -45,13 +45,13 @@
       .navbarOptions__icon {
         display: flex;
         @include roundButton(7px, 20px);
-        @include shadow(3px);
+        @extend %shadow;
       }
     }
 
     .navbarOptions__item:hover {
       .navbarOptions__icon {
-        @include shadowOnClick(3px);
+        @extend %shadowOnClick;
       }
 
       .navbarOptions__text {
@@ -61,7 +61,7 @@
 
     .navbarOptions__item--selected {
       .navbarOptions__icon {
-        @include shadowOnClick(3px);
+        @extend %shadowOnClick;
         color: map-get($colors, primaryAccent);
       }
 

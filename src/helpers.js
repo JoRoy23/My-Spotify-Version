@@ -11,4 +11,10 @@ const getArtists = (data, n) => {
   return truncate(artistsList.join(", "), n);
 };
 
-export { truncate, getArtists };
+// Customizing a playlist url with the genre and the name as string argument
+const customizePlaylistUrl = (genre, name) => {
+  const url = name.split(" ").join("-");
+  return `/playlist/${genre}/${url}`;
+};
+
+export { truncate, getArtists, customizePlaylistUrl };

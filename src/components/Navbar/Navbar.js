@@ -12,15 +12,13 @@ function Navbar() {
   // Style the border of the navigation bar
   const styleNavbar = () => {
     const navbarStyle =
-      songSelected.length !== 0
-        ? { borderRadius: "0" }
-        : { borderRadius: "20px 20px 0 0" };
+      songSelected.length !== 0 ? "navbar--withoutRoundBorder" : "";
 
     return navbarStyle;
   };
 
   return (
-    <header className="navbar" style={styleNavbar()}>
+    <header className={`navbar ${styleNavbar()}`}>
       <img className="navbar__logo" src={SpotifyLogo} alt="Spotify logo" />
       <NavbarOptions />
       <NavbarPlaylists myPlaylists={myPlaylists} />

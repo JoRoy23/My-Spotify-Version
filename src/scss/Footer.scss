@@ -2,6 +2,7 @@
 
 .footer {
   display: none;
+  @extend %shadow;
   @include ipad {
     display: flex;
     justify-content: space-between;
@@ -13,20 +14,37 @@
     width: 100%;
     height: 90px;
     padding: 10px 20px;
+    font-family: map-get($fonts, primary);
     color: map-get($colors, secondaryAccent);
-    background-image: linear-gradient(
-      to bottom,
-      map-get($colors, navbarPrimary),
-      map-get($colors, navbarSecondary)
-    );
-    @include shadow(3px);
+    background-color: map-get($colors, navbarPrimary);
   }
 
   &__left {
     display: flex;
     align-items: center;
 
-    img {
+    .footer__image {
+      width: 65px;
+      height: 65px;
+      margin-right: 10px;
+      border-radius: 10px;
+      border: 5px solid map-get($colors, blackBorder);
+      @extend %shadow;
+    }
+
+    .footer__songInfo {
+      .footer__song {
+        margin-bottom: 3px;
+        font-size: 1rem;
+        font-weight: bold;
+        color: map-get($colors, secondaryAccent);
+      }
+
+      .footer__artists {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: map-get($colors, greyText);
+      }
     }
   }
 
@@ -37,11 +55,11 @@
     .footer__button {
       margin-right: 15px;
       @extend %footerButton;
-      @include shadow(3px);
+      @extend %shadow;
     }
 
     .footer__button:hover {
-      @include shadowOnClick(3px);
+      @extend %shadowOnClick;
     }
 
     .footer__button--small {
@@ -49,7 +67,7 @@
       font-size: 15px;
     }
 
-    .footer__button--medium {
+    .footer__button-medium {
       padding: 10px;
       font-size: 20px;
     }
@@ -61,8 +79,8 @@
     }
 
     .footer__button--pause {
-      @include shadowOnClick(3px);
-      border: 2px solid rgba(2, 160, 67, 1);
+      @extend %shadowOnClick;
+      border: 3px solid map-get($colors, greenBorder);
       background-color: map-get($colors, primaryAccent);
     }
   }

@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AC4EE,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDzElC,AAAD,aAAO,CAAC;IAEJ,OAAO,EAAE,IAAI;IACb,MAAM,EAAE,KAAK;GAEhB",
+    "mappings": "AC2EE,MAAM,CAAC,MAAM,MAAM,SAAS,EAAE,KAAK;EDxElC,AAAD,aAAO,CAAC;IAEJ,OAAO,EAAE,IAAI;IACb,MAAM,EAAE,KAAK;GAEhB",
     "sources": [
         "../scss/Player.scss",
         "../scss/_config.scss"

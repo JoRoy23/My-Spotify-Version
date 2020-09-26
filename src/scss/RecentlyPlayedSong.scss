@@ -9,7 +9,7 @@
     cursor: pointer;
     border-radius: 50%;
     border: 5px solid map-get($colors, blackBorder);
-    @include shadow(6px);
+    @extend %shadow;
     @include ipad {
       width: 190px;
       border: 7px solid map-get($colors, blackBorder);
@@ -18,7 +18,7 @@
 
   .recentlyPlayedSong__artist {
     margin: 6px 0 2px 0;
-    cursor: pointer;
+    cursor: default;
     text-align: center;
     font-size: 0.75rem;
     font-weight: 500;

@@ -13,6 +13,7 @@
 
 .homeNewReleases .homeNewReleases__title {
   margin: 0 0 13px 20px;
+  cursor: default;
   font-size: 1.3rem;
 }
 

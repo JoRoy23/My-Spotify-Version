@@ -16,9 +16,15 @@
 
   .songsRow__container {
     padding-bottom: 80px;
+    @include ipad {
+      padding-bottom: 100px;
+    }
   }
 
   .songsRow__container--bigPadding {
     padding-bottom: 150px;
+    @include ipad {
+      padding-bottom: 100px;
+    }
   }
 }

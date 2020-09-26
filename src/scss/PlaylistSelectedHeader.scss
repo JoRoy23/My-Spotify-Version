@@ -11,12 +11,12 @@
     padding: 20px;
 
     .header__icons {
-      display: flex;
       @include roundButton(7px, 20px);
-      @include shadow(3px);
+      border: 2px solid map-get($colors, primary);
+      @extend %shadow;
     }
     .header__icons:hover {
-      @include shadowOnClick(3px);
+      @extend %shadowOnClick;
     }
 
     .header__right {
@@ -37,19 +37,42 @@
       margin: 10px 0 15px;
       border-radius: 15px;
       border: 5px solid map-get($colors, blackBorder);
-      @include shadow(6px);
+      @extend %shadow;
+      @include ipad {
+        width: 250px;
+        margin: 15px 0;
+      }
     }
 
     .header__playlistName {
       margin-bottom: 3px;
       font-size: 1.3rem;
       color: map-get($colors, secondaryAccent);
+      @include ipad {
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+      }
     }
 
     .header__playlistFollowers {
+      display: flex;
+      align-items: center;
       margin-bottom: 15px;
       font-size: 0.7rem;
       color: map-get($colors, greyText);
+      @include ipad {
+        margin-bottom: 18px;
+        font-size: 0.8rem;
+      }
+
+      .header__dot {
+        margin: 0 5px;
+        font-size: 0.85rem;
+        color: map-get($colors, secondaryAccent);
+        @include ipad {
+          font-size: 1rem;
+        }
+      }
     }
 
     .header__playButton {
@@ -59,11 +82,15 @@
       border: 3px solid map-get($colors, greenBorder);
       background-color: map-get($colors, primaryAccent);
       color: map-get($colors, secondaryAccent);
-      @include shadow(3px);
+      @extend %shadow;
+      @include ipad {
+        padding: 7px 55px;
+        font-size: 0.9rem;
+      }
     }
 
     .header__playButton:hover {
-      @include shadowOnClick(3px);
+      @extend %shadowOnClick;
     }
   }
 }

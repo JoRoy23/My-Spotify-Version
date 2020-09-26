@@ -1,6 +1,6 @@
 .myPlaylistName {
   margin-bottom: 15px;
-  cursor: pointer;
+  cursor: default;
   font-size: 0.9rem;
   font-weight: 500;
   font-family: "Arial";

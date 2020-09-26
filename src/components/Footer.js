@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { truncate } from "../helpers";
 import { SpotifyContext } from "../ContextApi/SpotifyState";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
@@ -13,7 +14,8 @@ import Slider from "@material-ui/core/Slider";
 import "../css/Footer.css";
 
 const Footer = () => {
-  const [{ isPlaying }, dispatch] = useContext(SpotifyContext);
+  const [{ isPlaying, songSelected }, dispatch] = useContext(SpotifyContext);
+  console.log(songSelected);
 
   const handlePlayClick = () => {
     dispatch({
@@ -25,10 +27,19 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer__left">
-        <img src="" alt="" />
-        <div className="footer__songInfo"></div>
-        <h4 className="footer__songName"></h4>
-        <p className="footer__songArtist"></p>
+        <img
+          className="footer__image"
+          src={songSelected.track?.album.images[0].url}
+          alt={songSelected.track?.album.name}
+        />
+        <div className="footer__songInfo">
+          <h4 className="footer__song">
+            {truncate(songSelected.track?.name, 21)}
+          </h4>
+          <p className="footer__artists">
+            {songSelected.track?.artists[0].name}
+          </p>
+        </div>
       </div>
       <div className="footer__center">
         <FavoriteIcon className="footer__button footer__button--small" />

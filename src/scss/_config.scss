@@ -29,6 +29,7 @@ $fonts: (
   text-align: center;
   font-size: 0.85rem;
   font-weight: bold;
+  cursor: default;
   color: #fff;
   border-radius: 99px;
   border: 2px solid map-get($colors, blackBorder);
@@ -42,30 +43,28 @@ $fonts: (
   border-radius: 50%;
   border: 2px solid map-get($colors, blackBorder);
   background-color: map-get($colors, button);
+  cursor: default;
   color: map-get($colors, secondaryAccent);
 }
 
 %footerButton {
   box-sizing: initial;
   padding: 7px;
-  cursor: pointer;
   border-radius: 50%;
   border: 2px solid map-get($colors, blackBorder);
   background-color: map-get($colors, primary);
 }
 
 // Shadow configuration
-@mixin shadow($blur) {
-  box-shadow: -1px -1px $blur rgba(56, 63, 69, 1),
-    2px 2px 6px rgba(0, 0, 0, 0.8);
+%shadow {
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
   transition: all 200ms ease;
 }
 
-@mixin shadowOnClick($blur) {
-  box-shadow: -1px -1px $blur rgba(255, 255, 255, 0.1),
-    2px 2px 6px rgba(0, 0, 0, 0.8),
-    inset -2px -2px $blur rgba(255, 255, 255, 0.05),
-    inset 2px 2px 6px rgba(0, 0, 0, 0.5);
+%shadowOnClick {
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
   transition: all 200ms ease;
 }
 
