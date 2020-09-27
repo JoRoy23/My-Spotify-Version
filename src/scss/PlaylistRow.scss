@@ -1,6 +1,6 @@
 @import "config.scss";
 
-.homeDancePlaylists {
+.playlistsRow {
   margin-bottom: 75px;
   font-weight: bold;
   font-family: map-get($fonts, primary);
@@ -9,7 +9,7 @@
     margin-bottom: 100px;
   }
 
-  .homeDancePlaylists__title {
+  .playlistsRow__title {
     margin: 0 0 8px 20px;
     cursor: default;
     font-size: 1.3rem;
@@ -18,13 +18,13 @@
     }
   }
 
-  .homeDancePlaylists__playlists {
+  .playlistsRow__covers {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
   }
 
-  .homeDancePlaylists__playlists::-webkit-scrollbar {
+  .playlistsRow__covers::-webkit-scrollbar {
     display: none;
   }
 }

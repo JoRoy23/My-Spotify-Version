@@ -1,4 +1,4 @@
-.homePopPlaylists {
+.playlistsRow {
   margin-bottom: 75px;
   font-weight: bold;
   font-family: "Arial";
@@ -6,24 +6,24 @@
 }
 
 @media screen and (min-width: 768px) {
-  .homePopPlaylists {
+  .playlistsRow {
     margin-bottom: 100px;
   }
 }
 
-.homePopPlaylists .homePopPlaylists__title {
+.playlistsRow .playlistsRow__title {
   margin: 0 0 8px 20px;
   cursor: default;
   font-size: 1.3rem;
 }
 
 @media screen and (min-width: 768px) {
-  .homePopPlaylists .homePopPlaylists__title {
+  .playlistsRow .playlistsRow__title {
     font-size: 1.5rem;
   }
 }
 
-.homePopPlaylists .homePopPlaylists__playlists {
+.playlistsRow .playlistsRow__covers {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,7 +31,7 @@
   scrollbar-width: none;
 }
 
-.homePopPlaylists .homePopPlaylists__playlists::-webkit-scrollbar {
+.playlistsRow .playlistsRow__covers::-webkit-scrollbar {
   display: none;
 }
-/*# sourceMappingURL=HomePopPlaylists.css.map */
+/*# sourceMappingURL=PlaylistRow.css.map */

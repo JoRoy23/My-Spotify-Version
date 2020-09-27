@@ -2,12 +2,12 @@ import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import { spotifyApi } from "../../App";
 import PlaylistCover from "./PlaylistCover";
-import "../../css/HomePopPlaylists.css";
+import "../../css/PlaylistRow.css";
 
-function HomePopPlaylists({ popPlaylists }) {
-  const [state, dispatch] = useContext(SpotifyContext);
+function PlaylistRow({ playlistData, playlistRowTitle }) {
+  const [{}, dispatch] = useContext(SpotifyContext);
 
-  // Set the information of the pop playlist selected
+  // Set the information of the playlist selected
   const handlePlaylistCoverClick = (id) => {
     // Fetch the tracks of the playlist
     spotifyApi.getPlaylistTracks(id).then((songs) => {
@@ -26,9 +26,9 @@ function HomePopPlaylists({ popPlaylists }) {
     });
   };
 
-  // Rendering the pop playlists
-  const renderingPopPlaylists = () => {
-    const popList = popPlaylists.playlists?.items.map((playlist) => {
+  // Rendering the featured playlist
+  const renderingPlaylistCovers = () => {
+    const playlistCovers = playlistData?.playlists?.items.map((playlist) => {
       return (
         <PlaylistCover
           key={playlist.id}
@@ -38,17 +38,15 @@ function HomePopPlaylists({ popPlaylists }) {
         />
       );
     });
-    return popList;
+    return playlistCovers;
   };
 
   return (
-    <div className="homePopPlaylists">
-      <h1 className="homePopPlaylists__title">Pop</h1>
-      <div className="homePopPlaylists__playlists">
-        {renderingPopPlaylists()}
-      </div>
+    <div className="playlistsRow">
+      <h1 className="playlistsRow__title">{playlistRowTitle}</h1>
+      <div className="playlistsRow__covers">{renderingPlaylistCovers()}</div>
     </div>
   );
 }
 
-export default HomePopPlaylists;
+export default PlaylistRow;

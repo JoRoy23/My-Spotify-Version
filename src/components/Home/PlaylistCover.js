@@ -4,9 +4,10 @@ import "../../css/PlaylistCover.css";
 
 function PlaylistCover({ id, playlist, onPlaylistCoverClick }) {
   return (
-    <div className="featuredPlaylist">
+    <div className="playlistCover">
       <NavLink to="/playlist">
         <img
+          className="playlistCover__cover"
           src={playlist.images[0].url}
           alt={playlist.name}
           onClick={() => {
@@ -14,7 +15,7 @@ function PlaylistCover({ id, playlist, onPlaylistCoverClick }) {
           }}
         />
       </NavLink>
-      <p className="featuredPlaylist__artists"></p>
+      <p className="playlistCover__artists"></p>
     </div>
   );
 }

@@ -1,14 +1,9 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import Header from "./Header";
-import HomeFeaturedPlaylists from "./HomeFeaturedPlaylists";
+import PlaylistRow from "./PlaylistRow";
 import HomeRecentlyPlayed from "./HomeRecentlyPlayed";
 import HomeNewReleases from "./HomeNewReleases";
-import HomePopPlaylists from "./HomePopPlaylists";
-import HomeDancePlaylists from "./HomeDancePlaylists";
-import HomeHiphopPlaylists from "./HomeHiphopPlaylists";
-import HomeRockPlaylists from "./HomeRockPlaylists";
-import HomeCountryPlaylists from "./HomeCountryPlaylists";
 import SettingsIcon from "@material-ui/icons/Settings";
 import "../../css/HomeContent.css";
 
@@ -22,12 +17,27 @@ function HomeContent() {
       </div>
       <HomeNewReleases newReleases={state.newReleases} />
       <HomeRecentlyPlayed recentlyPlayed={state.recentlyPlayed} />
-      <HomeFeaturedPlaylists featuredPlaylists={state.featuredPlaylists} />
-      <HomePopPlaylists popPlaylists={state.popPlaylists} />
-      <HomeDancePlaylists dancePlaylists={state.dancePlaylists} />
-      <HomeHiphopPlaylists hiphopPlaylists={state.hiphopPlaylists} />
-      <HomeRockPlaylists rockPlaylists={state.rockPlaylists} />
-      <HomeCountryPlaylists countryPlaylists={state.countryPlaylists} />
+      <PlaylistRow
+        playlistData={state.featuredPlaylists}
+        playlistRowTitle={"Popular playlists"}
+      />
+      <PlaylistRow playlistData={state.popPlaylists} playlistRowTitle={"Pop"} />
+      <PlaylistRow
+        playlistData={state.dancePlaylists}
+        playlistRowTitle={"Dance/Electronic"}
+      />
+      <PlaylistRow
+        playlistData={state.hiphopPlaylists}
+        playlistRowTitle={"Hip-hop"}
+      />
+      <PlaylistRow
+        playlistData={state.rockPlaylists}
+        playlistRowTitle={"Rock"}
+      />
+      <PlaylistRow
+        playlistData={state.countryPlaylists}
+        playlistRowTitle={"Country"}
+      />
     </div>
   );
 }

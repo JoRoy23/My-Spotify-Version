@@ -1,10 +1,10 @@
 @import "./config.scss";
 
-.featuredPlaylist {
+.playlistCover {
   margin-right: 5px;
   padding: 7px 5px 0;
 
-  img {
+  .playlistCover__cover {
     width: 145px;
     cursor: pointer;
     border-radius: 15px;
@@ -16,7 +16,7 @@
     }
   }
 
-  .featuredPlaylist__artists {
+  .playlistCover__artists {
     margin: 9px 0 2px 0;
     font-size: 1rem;
     font-weight: bold;
@@ -27,6 +27,6 @@
   }
 }
 
-.featuredPlaylist:first-child {
+.playlistCover:first-child {
   margin-left: 15px;
 }
