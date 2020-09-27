@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import { spotifyApi } from "../../App";
-import DancePlaylist from "./DancePlaylist";
+import PlaylistCover from "./PlaylistCover";
 import "../../css/HomeDancePlaylists.css";
 
 function HomeDancePlaylists({ dancePlaylists }) {
   const [state, dispatch] = useContext(SpotifyContext);
 
   // Set the information of the dance playlist selected
-  const handleDancePlaylistClick = (id) => {
+  const handlePlaylistCoverClick = (id) => {
     // Fetch the tracks of the playlist
     spotifyApi.getPlaylistTracks(id).then((songs) => {
       dispatch({
@@ -30,11 +30,11 @@ function HomeDancePlaylists({ dancePlaylists }) {
   const renderingDancePlaylists = () => {
     const danceList = dancePlaylists.playlists?.items.map((playlist) => {
       return (
-        <DancePlaylist
+        <PlaylistCover
           key={playlist.id}
           id={playlist.id}
           playlist={playlist}
-          onDancePlaylistClick={handleDancePlaylistClick}
+          onPlaylistCoverClick={handlePlaylistCoverClick}
         />
       );
     });

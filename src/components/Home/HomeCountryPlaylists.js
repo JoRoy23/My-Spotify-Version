@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import { spotifyApi } from "../../App";
-import CountryPlaylist from "./CountryPlaylist";
+import PlaylistCover from "./PlaylistCover";
 import "../../css/HomeCountryPlaylists.css";
 
 function HomeCountryPlaylists({ countryPlaylists }) {
   const [state, dispatch] = useContext(SpotifyContext);
 
   // Set the information of the pop playlist selected
-  const handleCountryPlaylistClick = (id) => {
+  const handlePlaylistCoverClick = (id) => {
     // Fetch the tracks of the playlist
     spotifyApi.getPlaylistTracks(id).then((songs) => {
       dispatch({
@@ -30,11 +30,11 @@ function HomeCountryPlaylists({ countryPlaylists }) {
   const renderingCountryPlaylists = () => {
     const countryList = countryPlaylists.playlists?.items.map((playlist) => {
       return (
-        <CountryPlaylist
+        <PlaylistCover
           key={playlist.id}
           id={playlist.id}
           playlist={playlist}
-          onCountryPlaylistClick={handleCountryPlaylistClick}
+          onPlaylistCoverClick={handlePlaylistCoverClick}
         />
       );
     });

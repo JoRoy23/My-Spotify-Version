@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import "../../css/FeaturedPlaylist.css";
+import "../../css/PlaylistCover.css";
 
-function FeaturedPlaylist({ id, playlist, onFeaturedPlaylistClick }) {
+function PlaylistCover({ id, playlist, onPlaylistCoverClick }) {
   return (
     <div className="featuredPlaylist">
       <NavLink to="/playlist">
@@ -10,7 +10,7 @@ function FeaturedPlaylist({ id, playlist, onFeaturedPlaylistClick }) {
           src={playlist.images[0].url}
           alt={playlist.name}
           onClick={() => {
-            onFeaturedPlaylistClick(id);
+            onPlaylistCoverClick(id);
           }}
         />
       </NavLink>
@@ -19,4 +19,4 @@ function FeaturedPlaylist({ id, playlist, onFeaturedPlaylistClick }) {
   );
 }
 
-export default FeaturedPlaylist;
+export default PlaylistCover;

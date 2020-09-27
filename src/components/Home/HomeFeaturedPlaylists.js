@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import { spotifyApi } from "../../App";
-import FeaturedPlaylist from "./FeaturedPlaylist";
+import PlaylistCover from "./PlaylistCover";
 import "../../css/HomeFeaturedPlaylists.css";
 
 function HomeFeaturedPlaylists({ featuredPlaylists }) {
   const [state, dispatch] = useContext(SpotifyContext);
 
   // Set the information of the featured playlist selected
-  const handleFeaturedPlaylistClick = (id) => {
+  const handlePlaylistCoverClick = (id) => {
     // Fetch the tracks of the playlist
     spotifyApi.getPlaylistTracks(id).then((songs) => {
       dispatch({
@@ -30,11 +30,11 @@ function HomeFeaturedPlaylists({ featuredPlaylists }) {
   const renderingFeaturedPlaylists = () => {
     const featuredList = featuredPlaylists.playlists?.items.map((playlist) => {
       return (
-        <FeaturedPlaylist
+        <PlaylistCover
           key={playlist.id}
           id={playlist.id}
           playlist={playlist}
-          onFeaturedPlaylistClick={handleFeaturedPlaylistClick}
+          onPlaylistCoverClick={handlePlaylistCoverClick}
         />
       );
     });
