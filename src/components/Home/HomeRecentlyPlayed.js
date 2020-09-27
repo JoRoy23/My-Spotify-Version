@@ -18,7 +18,7 @@ function HomeRecentlyPlayed({ recentlyPlayed }) {
           key={info.track.album.id}
           id={info.track.album.id}
           album={info.track.album}
-          getArtists={getArtists}
+          artists={getArtists(info.track.album.artists)}
         />
       );
     });

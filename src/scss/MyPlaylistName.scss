@@ -1,7 +1,9 @@
 @import "./config.scss";
 
 .myPlaylistName {
+  display: flex;
   margin-bottom: 15px;
+  text-decoration: none;
   cursor: default;
   font-size: 0.9rem;
   font-weight: 500;

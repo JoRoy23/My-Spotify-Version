@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { getArtists, truncate } from "../../helpers";
 import SongsRow from "./SongsRow";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import PlaylistSelectedHeader from "./PlaylistSelectedHeader";
@@ -28,10 +29,21 @@ function PlaylistSelectedContent() {
     const songsList = songsOfPlaylistSelected.items?.map((song) => {
       return (
         <SongsRow
-          key={song.track.id}
-          id={song.track.id}
-          song={song}
+          key={song.track?.id}
+          id={song.track?.id}
+          songObject={song}
+          song={
+            window.innerWidth < 600
+              ? truncate(song.track.name, 27)
+              : song.track.name
+          }
           album={song.track.album.name}
+          albumImage={song.track.album.images[0].url}
+          artists={
+            window.innerWidth < 600
+              ? truncate(getArtists(song.track.artists), 27)
+              : getArtists(song.track.artists)
+          }
           onPlaylistSongClick={handlePlaylistSongClick}
         />
       );

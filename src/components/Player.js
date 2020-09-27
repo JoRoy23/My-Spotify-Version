@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { getArtists, truncate } from "../helpers";
 import { SpotifyContext } from "../ContextApi/SpotifyState";
 import SongSelectedBar from "./SongSelectedBar";
 import Navbar from "./Navbar/Navbar";
@@ -8,6 +9,7 @@ import "../css/Player.css";
 
 function Player() {
   const [{ songSelected }] = useContext(SpotifyContext);
+  console.log(songSelected);
 
   // Show the selected track bar when the user click on a track
   const styleTrackSelectedBar = () => {
@@ -21,8 +23,16 @@ function Player() {
         <Content />
       </div>
       <SongSelectedBar
-        song={songSelected.track?.name}
-        artists={songSelected.track?.artists[0].name}
+        song={
+          window.innerWidth < 600
+            ? truncate(songSelected.track?.name, 19)
+            : songSelected.track?.name
+        }
+        artists={
+          window.innerWidth < 600
+            ? truncate(getArtists(songSelected.track?.artists), 19)
+            : getArtists(songSelected.track?.artists)
+        }
         albumImage={songSelected.track?.album.images[0].url}
         album={songSelected.track?.album.name}
         styleBar={styleTrackSelectedBar}

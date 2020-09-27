@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { truncate } from "../helpers";
+import { getArtists } from "../helpers";
 import { SpotifyContext } from "../ContextApi/SpotifyState";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
@@ -9,6 +9,7 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import PauseIcon from "@material-ui/icons/Pause";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
+import MusicNote from "../images/musicNote.png";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import Slider from "@material-ui/core/Slider";
 import "../css/Footer.css";
@@ -29,15 +30,17 @@ const Footer = () => {
       <div className="footer__left">
         <img
           className="footer__image"
-          src={songSelected.track?.album.images[0].url}
+          src={
+            songSelected.track
+              ? songSelected.track.album.images[0].url
+              : MusicNote
+          }
           alt={songSelected.track?.album.name}
         />
         <div className="footer__songInfo">
-          <h4 className="footer__song">
-            {truncate(songSelected.track?.name, 21)}
-          </h4>
+          <h4 className="footer__song">{songSelected.track?.name}</h4>
           <p className="footer__artists">
-            {songSelected.track?.artists[0].name}
+            {songSelected.track && getArtists(songSelected.track.artists)}
           </p>
         </div>
       </div>

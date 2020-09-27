@@ -1,5 +1,4 @@
 import React from "react";
-import { truncate } from "../helpers";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import "../css/SongSelectedBar.css";
@@ -14,7 +13,7 @@ function SongSelectedBar({ song, artists, albumImage, album, styleBar }) {
           alt={album}
         />
         <div className="songSelected__songInformation">
-          <h4 className="songSelected__song">{truncate(song, 19)}</h4>
+          <h4 className="songSelected__song">{song}</h4>
           <p className="songSelected__artists">{artists}</p>
         </div>
       </div>

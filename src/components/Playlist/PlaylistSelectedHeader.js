@@ -21,7 +21,7 @@ function PlaylistSelectedHeader({
       <div className="header__playlistCover">
         <img
           className="header__coverImage"
-          src={playlistImage ? playlistImage[0].url : ""}
+          src={playlistImage ? playlistImage[0]?.url : ""}
           alt={playlistName}
         />
         <h2 className="header__playlistName">{playlistName}</h2>

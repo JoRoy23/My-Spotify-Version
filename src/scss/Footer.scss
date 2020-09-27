@@ -33,6 +33,10 @@
     }
 
     .footer__songInfo {
+      @include ipad {
+        width: 280px;
+      }
+
       .footer__song {
         margin-bottom: 3px;
         font-size: 1rem;
@@ -80,7 +84,7 @@
 
     .footer__button--pause {
       @extend %shadowOnClick;
-      border: 3px solid map-get($colors, greenBorder);
+      border: 2px solid map-get($colors, greenBorder);
       background-color: map-get($colors, primaryAccent);
     }
   }
