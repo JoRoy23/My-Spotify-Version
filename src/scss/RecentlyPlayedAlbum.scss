@@ -1,22 +1,22 @@
 @import "./config.scss";
 
-.recentlyPlayedSong {
+.recentlyPlayedAlbum {
   margin-right: 5px;
   padding: 7px 5px 0;
 
-  img {
+  .recentlyPlayedAlbum__cover {
     width: 115px;
     cursor: pointer;
     border-radius: 50%;
     border: 5px solid map-get($colors, blackBorder);
     @extend %shadow;
     @include ipad {
-      width: 190px;
+      width: 150px;
       border: 7px solid map-get($colors, blackBorder);
     }
   }
 
-  .recentlyPlayedSong__artist {
+  .recentlyPlayedAlbum__artists {
     margin: 6px 0 2px 0;
     cursor: default;
     text-align: center;
@@ -29,6 +29,6 @@
   }
 }
 
-.recentlyPlayedSong:first-child {
+.recentlyPlayedAlbum:first-child {
   margin-left: 15px;
 }

@@ -8,32 +8,66 @@ function PlaylistRow({ playlistData, playlistRowTitle }) {
   const [{}, dispatch] = useContext(SpotifyContext);
 
   // Set the information of the playlist selected
-  const handlePlaylistCoverClick = (id) => {
+  const handlePlaylistCoverClick = (playlistId) => {
     // Fetch the tracks of the playlist
-    spotifyApi.getPlaylistTracks(id).then((songs) => {
-      dispatch({
-        type: "SET_SONGS-OF-PLAYLIST-SELECTED",
-        songsOfPlaylistSelected: songs,
-      });
-    });
+    async function getPlaylistTracks() {
+      const playlistTracksResponse = await spotifyApi.getPlaylistTracks(
+        playlistId
+      );
 
-    // Fetch the info of the playlist album
-    spotifyApi.getPlaylist(id).then((playlist) => {
+      const playlistTracks = playlistTracksResponse.items?.map(
+        (playlistTrack) => {
+          const track = playlistTrack.track;
+          const album = playlistTrack.track?.album;
+          const artists = playlistTrack.track?.artists;
+
+          return {
+            trackId: track?.id,
+            trackName: track?.name,
+            artistsName: artists,
+            albumImage: album?.images[0]?.url,
+            albumName: album?.name,
+          };
+        }
+      );
+
       dispatch({
-        type: "SET_INFO-OF-PLAYLIST-SELECTED",
-        infoOfPlaylistSelected: playlist,
+        type: "SET_TRACKS-OF-PLAYLIST/ALBUM-SELECTED",
+        tracksOfPlaylistSelected: playlistTracks,
       });
-    });
+    }
+    getPlaylistTracks();
+
+    // Fetch the info of the playlist for the featured cover of the playlist page
+    async function getPlaylist() {
+      const playlistInfoResponse = await spotifyApi.getPlaylist(playlistId);
+
+      const { id, followers, name, owner, images } = playlistInfoResponse;
+      const playlistInfo = {
+        featuredCoverId: id,
+        featuredCoverFollowers: followers,
+        featuredCoverName: name,
+        featuredCoverOwner: owner,
+        featuredCoverImage: images,
+      };
+
+      dispatch({
+        type: "SET_FEATUREDCOVER-OF-PLAYLIST/ALBUM-SELECTED",
+        featuredOfPlaylistSelected: playlistInfo,
+      });
+    }
+    getPlaylist();
   };
 
   // Rendering the featured playlist
   const renderingPlaylistCovers = () => {
-    const playlistCovers = playlistData?.playlists?.items.map((playlist) => {
+    const playlistCovers = playlistData?.map((playlist) => {
       return (
         <PlaylistCover
           key={playlist.id}
-          id={playlist.id}
-          playlist={playlist}
+          playlistId={playlist.playlistId}
+          playlistImage={playlist.playlistImages[0].url}
+          playlistName={playlist.playlistName}
           onPlaylistCoverClick={handlePlaylistCoverClick}
         />
       );

@@ -1,6 +1,6 @@
 @import "config.scss";
 
-.homeNewReleases {
+.newReleasesSection {
   margin-bottom: 30px;
   font-weight: bold;
   font-family: map-get($fonts, primary);
@@ -9,7 +9,7 @@
     margin-bottom: 40px;
   }
 
-  .homeNewReleases__title {
+  .newReleasesSection__title {
     margin: 0 0 13px 20px;
     cursor: default;
     font-size: 1.3rem;
@@ -18,7 +18,7 @@
     }
   }
 
-  .homeNewReleases__albums {
+  .newReleasesSection__albums {
     display: flex;
     flex-wrap: wrap;
     padding: 0 7px;

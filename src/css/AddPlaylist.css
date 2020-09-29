@@ -28,7 +28,8 @@
     bottom: 90px;
     left: 0;
     width: 100%;
-    padding: 20px;
+    height: 80px;
+    padding: 0 20px;
     border-top: 2px solid rgba(125, 126, 127, 0.2);
     font-weight: bold;
     font-family: "Arial";

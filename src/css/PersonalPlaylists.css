@@ -1,0 +1,37 @@
+.personalPlaylists {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .personalPlaylists {
+    display: block;
+    padding: 15px 20px;
+    margin-bottom: 170px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 0;
+    font-weight: bold;
+    font-family: "Arial";
+    color: #c8c8c8;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+.personalPlaylists__title {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+
+.personalPlaylists__underline {
+  width: 90%;
+  height: 2px;
+  margin-bottom: 20px;
+  background-color: rgba(125, 126, 127, 0.2);
+}
+
+.personalPlaylists::-webkit-scrollbar {
+  display: none;
+}
+/*# sourceMappingURL=PersonalPlaylists.css.map */

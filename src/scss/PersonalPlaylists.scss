@@ -1,14 +1,18 @@
 @import "config.scss";
 
-.navbarPlaylists {
+.personalPlaylists {
   display: none;
   @include ipad {
     display: block;
     padding: 15px 20px;
+    margin-bottom: 170px;
     overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: 0;
     font-weight: bold;
     font-family: map-get($fonts, primary);
     color: map-get($colors, secondaryAccent);
+    flex-grow: 1;
   }
 
   &__title {
@@ -22,4 +26,8 @@
     margin-bottom: 20px;
     background-color: map-get($colors, navbarBorder);
   }
+}
+
+.personalPlaylists::-webkit-scrollbar {
+  display: none;
 }

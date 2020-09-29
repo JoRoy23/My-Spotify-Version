@@ -1,6 +1,6 @@
 @import "config.scss";
 
-.playlistSelectedContent {
+.playlistPageContent {
   height: 100vh;
   overflow-y: scroll;
   color: map-get($colors, secondaryAccent);
@@ -14,14 +14,14 @@
     overflow-y: scroll;
   }
 
-  .songsRow__container {
+  .playlistPageContent__songsContainer {
     padding-bottom: 80px;
     @include ipad {
       padding-bottom: 100px;
     }
   }
 
-  .songsRow__container--bigPadding {
+  .playlistPageContent__songsContainer--bigPadding {
     padding-bottom: 150px;
     @include ipad {
       padding-bottom: 100px;

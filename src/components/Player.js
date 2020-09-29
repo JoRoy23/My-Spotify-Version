@@ -9,9 +9,8 @@ import "../css/Player.css";
 
 function Player() {
   const [{ songSelected }] = useContext(SpotifyContext);
-  console.log(songSelected);
 
-  // Show the selected track bar when the user click on a track
+  // The bar who's showing the song selected on mobile is visible
   const styleTrackSelectedBar = () => {
     return songSelected.length !== 0 ? "songSelectedBar--visible" : "";
   };
@@ -22,24 +21,22 @@ function Player() {
         <Navbar />
         <Content />
       </div>
-      <SongSelectedBar
-        song={
+      <SongSelectedBar //
+        trackName={
           window.innerWidth < 600
-            ? truncate(songSelected.track?.name, 19)
-            : songSelected.track?.name
+            ? truncate(songSelected.trackName, 19)
+            : songSelected.trackName
         }
-        artists={
+        artistsName={
           window.innerWidth < 600
-            ? truncate(getArtists(songSelected.track?.artists), 19)
-            : getArtists(songSelected.track?.artists)
+            ? truncate(songSelected.artistsName, 19)
+            : songSelected.artistsName
         }
-        albumImage={songSelected.track?.album.images[0].url}
-        album={songSelected.track?.album.name}
+        albumImage={songSelected.albumImage}
+        albumName={songSelected.albumName}
         styleBar={styleTrackSelectedBar}
       />
-      <footer className="player__footer">
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 }

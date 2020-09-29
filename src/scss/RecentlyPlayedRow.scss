@@ -1,6 +1,6 @@
 @import "./config.scss";
 
-.homeRecentlyPlayed {
+.recentlyPlayedRow {
   margin-bottom: 40px;
   font-family: map-get($fonts, primary);
   color: map-get($colors, secondaryAccent);
@@ -8,7 +8,7 @@
     margin-bottom: 50px;
   }
 
-  .homeRecentlyPlayed__title {
+  .recentlyPlayedRow__title {
     margin: 0 0 8px 20px;
     cursor: default;
     font-size: 1.3rem;
@@ -18,13 +18,13 @@
     }
   }
 
-  .homeRecentlyPlayed__songs {
+  .recentlyPlayedRow__album {
     display: flex;
     overflow-x: scroll;
     scrollbar-width: none;
   }
 
-  .homeRecentlyPlayed__songs::-webkit-scrollbar {
+  .recentlyPlayedRow__album::-webkit-scrollbar {
     display: none;
   }
 }

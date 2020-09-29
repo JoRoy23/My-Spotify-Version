@@ -1,4 +1,4 @@
-.playlistSelectedContent {
+.playlistPageContent {
   height: 100vh;
   overflow-y: scroll;
   color: #c8c8c8;
@@ -7,7 +7,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .playlistSelectedContent {
+  .playlistPageContent {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
@@ -15,23 +15,23 @@
   }
 }
 
-.playlistSelectedContent .songsRow__container {
+.playlistPageContent .playlistPageContent__songsContainer {
   padding-bottom: 80px;
 }
 
 @media screen and (min-width: 768px) {
-  .playlistSelectedContent .songsRow__container {
+  .playlistPageContent .playlistPageContent__songsContainer {
     padding-bottom: 100px;
   }
 }
 
-.playlistSelectedContent .songsRow__container--bigPadding {
+.playlistPageContent .playlistPageContent__songsContainer--bigPadding {
   padding-bottom: 150px;
 }
 
 @media screen and (min-width: 768px) {
-  .playlistSelectedContent .songsRow__container--bigPadding {
+  .playlistPageContent .playlistPageContent__songsContainer--bigPadding {
     padding-bottom: 100px;
   }
 }
-/*# sourceMappingURL=PlaylistSelectedContent.css.map */
+/*# sourceMappingURL=PlaylistPageContent.css.map */

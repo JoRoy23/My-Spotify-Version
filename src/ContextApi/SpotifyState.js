@@ -4,8 +4,8 @@ import { reducer } from "./reducer";
 // Initial state of our Spotify application
 const initialState = {
   token: null, // User token
-  user: null, // User information
-  myPlaylists: [], // My playlists for the navbar
+  user: { userName: "", userAvatar: [] }, // User information
+  userPlaylists: [], // User playlists for the navbar
   featuredPlaylists: [], // Popular playlists for the home menu
   newReleases: [], // New release for the home menu
   recentlyPlayed: [], // Recently played albums for the home menu
@@ -14,8 +14,8 @@ const initialState = {
   hiphopPlaylists: [], // Hip-hop playlists for the home menu
   rockPlaylists: [], // Rock playlists for the home menu
   countryPlaylists: [], // Country playlists for the home menu
-  songsOfPlaylistSelected: [], // Songs of a selected playlist
-  infoOfPlaylistSelected: [], // Info of a selected playlist
+  tracksOfPlaylistSelected: [], // Songs of a selected playlist
+  featuredOfPlaylistSelected: [], // Info of the featured section of the playlist
   songSelected: [], // Song selected
   isPlaying: false,
   item: null,

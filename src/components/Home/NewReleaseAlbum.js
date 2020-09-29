@@ -2,11 +2,11 @@ import React from "react";
 import { truncate } from "../../helpers";
 import "../../css/NewReleaseAlbum.css";
 
-function NewReleaseAlbum({ newRelease }) {
+function NewReleaseAlbum({ albumImage, albumName }) {
   return (
     <div className="newReleaseAlbum">
-      <img src={newRelease.images[0].url} alt={newRelease.name} />
-      <p className="newReleaseAlbum__title">{truncate(newRelease.name, 15)}</p>
+      <img src={albumImage[0].url} alt={albumName} />
+      <p className="newReleaseAlbum__title">{truncate(albumName, 15)}</p>
     </div>
   );
 }

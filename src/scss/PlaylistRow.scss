@@ -6,7 +6,7 @@
   font-family: map-get($fonts, primary);
   color: map-get($colors, secondaryAccent);
   @include ipad {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 
   .playlistsRow__title {

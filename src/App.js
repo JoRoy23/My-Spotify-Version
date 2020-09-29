@@ -10,109 +10,252 @@ import "./App.css";
 export const spotifyApi = new SpotifyWebApi();
 
 function App() {
-  const [{ token, popPlaylists }, dispatch] = useContext(SpotifyContext);
+  const [{ token }, dispatch] = useContext(SpotifyContext);
 
   useEffect(() => {
-    // Get my token
+    // Get user token from the url
     const hash = getTokenFromUrl();
     window.location.hash = "";
     const _token = hash.access_token;
 
     if (_token) {
-      // Set my token
+      // Set user token
       spotifyApi.setAccessToken(_token);
       dispatch({
         type: "SET_TOKEN",
         token: _token,
       });
 
-      // Fetch user information
-      spotifyApi.getMe().then((user) => {
+      // Fetch user info
+      async function getMe() {
+        const userResponse = await spotifyApi.getMe();
+
+        const { display_name, images } = userResponse;
+        const userObject = { userName: display_name, userAvatar: images };
+
         dispatch({
           type: "SET_USER",
-          user: user,
+          user: userObject,
         });
-      });
+      }
+      getMe();
 
-      // Fetch my playlists
-      spotifyApi.getUserPlaylists().then((playlists) => {
+      // Fetch user playlists info
+      async function getUserPlaylists() {
+        const userPlaylistsResponse = await spotifyApi.getUserPlaylists();
+
+        const userPlaylists = userPlaylistsResponse.items.map(
+          (userPlaylist) => {
+            const { id, name } = userPlaylist;
+            return { userPlaylistId: id, userPlaylistName: name };
+          }
+        );
+
         dispatch({
-          type: "SET_MY-PLAYLISTS",
-          myPlaylists: playlists,
+          type: "SET_USER-PLAYLISTS",
+          userPlaylists: userPlaylists,
         });
-      });
+      }
+      getUserPlaylists();
 
-      // Fetch the popular playlists
-      spotifyApi.getFeaturedPlaylists().then((featuredPlaylists) => {
+      // Fetch recently played albums
+      async function getMyRecentlyPlayedTracks() {
+        const recentlyPlayedAlbumsResponse = await spotifyApi.getMyRecentlyPlayedTracks();
+
+        const recentlyPlayedAlbums = recentlyPlayedAlbumsResponse.items.map(
+          (recentlyPlayedAlbum) => {
+            const {
+              id,
+              name,
+              artists,
+              images,
+            } = recentlyPlayedAlbum.track.album;
+            return {
+              albumId: id,
+              albumName: name,
+              albumArtists: artists,
+              albumImage: images,
+            };
+          }
+        );
+        dispatch({
+          type: "SET_RECENTLY-PLAYED",
+          recentlyPlayed: recentlyPlayedAlbums,
+        });
+      }
+      getMyRecentlyPlayedTracks();
+
+      // Fetch the new releases albums
+      async function getNewReleasesAlbums() {
+        const newReleasesAlbumsResponse = await spotifyApi.getNewReleases({
+          limit: 6,
+        });
+
+        const newReleasesAlbums = newReleasesAlbumsResponse.albums.items.map(
+          (newReleaseAlbum) => {
+            const { id, name, artists, images } = newReleaseAlbum;
+            return {
+              albumId: id,
+              albumName: name,
+              albumArtists: artists,
+              albumImage: images,
+            };
+          }
+        );
+
+        dispatch({
+          type: "SET_NEW-RELEASES",
+          newReleases: newReleasesAlbums,
+        });
+      }
+      getNewReleasesAlbums();
+
+      // Fetch the data for the playlist rendered in the home content
+      async function getFeaturedPlaylists() {
+        const featuredPlaylistsResponse = await spotifyApi.getFeaturedPlaylists();
+
+        const featuredPlaylists = featuredPlaylistsResponse.playlists.items?.map(
+          (featuredPlaylist) => {
+            const { id, images, name, owner } = featuredPlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
+
         dispatch({
           type: "SET_FEATURED-PLAYLISTS",
           featuredPlaylists: featuredPlaylists,
         });
-      });
+      }
+      getFeaturedPlaylists();
 
-      // Fetch the recently played albums
-      spotifyApi.getMyRecentlyPlayedTracks().then((recentlyPlayed) => {
-        dispatch({
-          type: "SET_RECENTLY-PLAYED",
-          recentlyPlayed: recentlyPlayed,
-        });
-      });
+      async function getPopCategoryPlaylist() {
+        const popPlaylistsResponse = await spotifyApi.getCategoryPlaylists(
+          "pop"
+        );
 
-      // Fetch the new releases albums
-      spotifyApi.getNewReleases({ limit: 6 }).then((newReleases) => {
-        dispatch({
-          type: "SET_NEW-RELEASES",
-          newReleases: newReleases,
-        });
-      });
+        const popPlaylists = popPlaylistsResponse.playlists.items?.map(
+          (popPlaylist) => {
+            const { id, images, name, owner } = popPlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
 
-      // spotifyApi.getCategories().then((categories) => {
-      //   console.log(categories);
-      // });
-
-      // Fetch the pop category
-      spotifyApi.getCategoryPlaylists("pop").then((popPlaylists) => {
         dispatch({
           type: "SET_POP-PLAYLISTS",
           popPlaylists: popPlaylists,
         });
-      });
+      }
+      getPopCategoryPlaylist();
 
-      // Fetch the dance/electronic category
-      spotifyApi.getCategoryPlaylists("edm_dance").then((dancePlaylists) => {
+      async function getDanceCategoryPlaylist() {
+        const dancePlaylistsResponse = await spotifyApi.getCategoryPlaylists(
+          "edm_dance"
+        );
+
+        const dancePlaylists = dancePlaylistsResponse.playlists.items?.map(
+          (dancePlaylist) => {
+            const { id, images, name, owner } = dancePlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
+
         dispatch({
           type: "SET_DANCE-PLAYLISTS",
           dancePlaylists: dancePlaylists,
         });
-      });
+      }
+      getDanceCategoryPlaylist();
 
-      // Fetch the hip-hop category
-      spotifyApi.getCategoryPlaylists("hiphop").then((hiphopPlaylists) => {
+      async function getHiphopCategoryPlaylist() {
+        const hiphopPlaylistsResponse = await spotifyApi.getCategoryPlaylists(
+          "hiphop"
+        );
+
+        const hiphopPlaylists = hiphopPlaylistsResponse.playlists.items?.map(
+          (hiphopPlaylist) => {
+            const { id, images, name, owner } = hiphopPlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
+
         dispatch({
           type: "SET_HIPHOP-PLAYLISTS",
           hiphopPlaylists: hiphopPlaylists,
         });
-      });
+      }
+      getHiphopCategoryPlaylist();
 
-      // Fetch the rock category
-      spotifyApi.getCategoryPlaylists("rock").then((rockPlaylists) => {
+      async function getRockCategoryPlaylist() {
+        const rockPlaylistsResponse = await spotifyApi.getCategoryPlaylists(
+          "rock"
+        );
+
+        const rockPlaylists = rockPlaylistsResponse.playlists.items?.map(
+          (rockPlaylist) => {
+            const { id, images, name, owner } = rockPlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
+
         dispatch({
           type: "SET_ROCK-PLAYLISTS",
           rockPlaylists: rockPlaylists,
         });
-      });
+      }
+      getRockCategoryPlaylist();
 
-      // Fetch the country category
-      spotifyApi.getCategoryPlaylists("country").then((countryPlaylists) => {
-        // console.log(countryPlaylists);
+      async function getCountryCategoryPlaylist() {
+        const countryPlaylistsResponse = await spotifyApi.getCategoryPlaylists(
+          "country"
+        );
+
+        const countryPlaylists = countryPlaylistsResponse.playlists.items?.map(
+          (countryPlaylist) => {
+            const { id, images, name, owner } = countryPlaylist;
+            return {
+              playlistId: id,
+              playlistImages: images,
+              playlistName: name,
+              playlistOwner: owner,
+            };
+          }
+        );
+
         dispatch({
           type: "SET_COUNTRY-PLAYLISTS",
           countryPlaylists: countryPlaylists,
         });
-      });
+      }
+      getCountryCategoryPlaylist();
     }
   }, []);
 
+  // If token -> direction player if not back on the login page
   return <div className="app">{token ? <Player /> : <Login />}</div>;
 }
 

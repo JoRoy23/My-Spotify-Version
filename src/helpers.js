@@ -17,4 +17,9 @@ const customizePlaylistUrl = (genre, name) => {
   return `/playlist/${genre}/${url}`;
 };
 
-export { truncate, getArtists, customizePlaylistUrl };
+// Get the year of a date
+const getDateYear = (str) => {
+  const date = new Date(str);
+  return date.getFullYear();
+};
+export { truncate, getArtists, customizePlaylistUrl, getDateYear };

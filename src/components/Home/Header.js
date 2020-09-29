@@ -14,10 +14,10 @@ function Header() {
       <div className="header__right">
         <img
           className="header__avatar"
-          src={user?.images[0].url}
-          alt={user?.display_name}
+          src={user.userAvatar[0]?.url}
+          alt={user.userName}
         />
-        <h4 className="header__username">{user?.display_name}</h4>
+        <h4 className="header__username">{user.userName}</h4>
       </div>
     </header>
   );

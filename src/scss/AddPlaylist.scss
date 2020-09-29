@@ -9,7 +9,8 @@
     bottom: 90px;
     left: 0;
     width: 100%;
-    padding: 20px;
+    height: 80px;
+    padding: 0 20px;
     border-top: 2px solid map-get($colors, navbarBorder);
     font-weight: bold;
     font-family: map-get($fonts, primary);

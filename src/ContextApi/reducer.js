@@ -5,8 +5,8 @@ export const reducer = (state, action) => {
       return { ...state, user: action.user };
     case "SET_TOKEN":
       return { ...state, token: action.token };
-    case "SET_MY-PLAYLISTS":
-      return { ...state, myPlaylists: action.myPlaylists };
+    case "SET_USER-PLAYLISTS":
+      return { ...state, userPlaylists: action.userPlaylists };
     case "SET_FEATURED-PLAYLISTS":
       return { ...state, featuredPlaylists: action.featuredPlaylists };
     case "SET_RECENTLY-PLAYED":
@@ -23,15 +23,15 @@ export const reducer = (state, action) => {
       return { ...state, rockPlaylists: action.rockPlaylists };
     case "SET_COUNTRY-PLAYLISTS":
       return { ...state, countryPlaylists: action.countryPlaylists };
-    case "SET_SONGS-OF-PLAYLIST-SELECTED":
+    case "SET_TRACKS-OF-PLAYLIST/ALBUM-SELECTED":
       return {
         ...state,
-        songsOfPlaylistSelected: action.songsOfPlaylistSelected,
+        tracksOfPlaylistSelected: action.tracksOfPlaylistSelected,
       };
-    case "SET_INFO-OF-PLAYLIST-SELECTED":
+    case "SET_FEATUREDCOVER-OF-PLAYLIST/ALBUM-SELECTED":
       return {
         ...state,
-        infoOfPlaylistSelected: action.infoOfPlaylistSelected,
+        featuredOfPlaylistSelected: action.featuredOfPlaylistSelected,
       };
     case "SET_SONG-SELECTED":
       return { ...state, songSelected: action.songSelected };

@@ -1,17 +1,23 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { customizePlaylistUrl } from "../../helpers";
 import "../../css/PlaylistCover.css";
 
-function PlaylistCover({ id, playlist, onPlaylistCoverClick }) {
+function PlaylistCover({
+  playlistId,
+  playlistImage,
+  playlistName,
+  onPlaylistCoverClick,
+}) {
   return (
     <div className="playlistCover">
-      <NavLink to="/playlist">
+      <NavLink to={customizePlaylistUrl("", playlistName)}>
         <img
           className="playlistCover__cover"
-          src={playlist.images[0].url}
-          alt={playlist.name}
+          src={playlistImage}
+          alt={playlistName}
           onClick={() => {
-            onPlaylistCoverClick(id);
+            onPlaylistCoverClick(playlistId);
           }}
         />
       </NavLink>

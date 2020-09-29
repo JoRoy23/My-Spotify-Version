@@ -50,12 +50,12 @@
     display: flex;
 
     .songSelected__icon {
-      @include roundButton(7px, 20px);
+      @include roundButton(9px, 15px);
       @extend %shadow;
     }
 
     .songSelected__icon:first-child {
-      margin-right: 25px;
+      margin-right: 15px;
     }
 
     .songSelected__icon:hover {

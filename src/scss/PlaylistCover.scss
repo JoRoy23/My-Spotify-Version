@@ -11,7 +11,7 @@
     border: 5px solid map-get($colors, blackBorder);
     @extend %shadow;
     @include ipad {
-      width: 230px;
+      width: 180px;
       border: 7px solid map-get($colors, blackBorder);
     }
   }

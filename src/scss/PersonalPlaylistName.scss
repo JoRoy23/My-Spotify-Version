@@ -1,6 +1,6 @@
 @import "./config.scss";
 
-.myPlaylistName {
+.personalPlaylistName {
   display: flex;
   margin-bottom: 15px;
   text-decoration: none;
@@ -11,11 +11,11 @@
   color: map-get($colors, greyText);
 }
 
-.myPlaylistName:last-child {
+.personalPlaylistName:last-child {
   margin-bottom: 0;
 }
 
-.myPlaylistName:hover {
+.personalPlaylistName:hover {
   color: map-get($colors, secondaryAccent);
   transition: color 200ms ease;
 }

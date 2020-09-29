@@ -1,6 +1,6 @@
 @import "./config.scss";
 
-.playlistSelectedHeader {
+.playlistPageHeader {
   font-family: map-get($fonts, primary);
   font-weight: bold;
 
@@ -54,6 +54,7 @@
       }
     }
 
+    .header__playlistNbTracks,
     .header__playlistFollowers {
       display: flex;
       align-items: center;

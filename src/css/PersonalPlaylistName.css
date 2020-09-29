@@ -1,4 +1,4 @@
-.myPlaylistName {
+.personalPlaylistName {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -11,13 +11,13 @@
   color: #6e6e6e;
 }
 
-.myPlaylistName:last-child {
+.personalPlaylistName:last-child {
   margin-bottom: 0;
 }
 
-.myPlaylistName:hover {
+.personalPlaylistName:hover {
   color: #c8c8c8;
   -webkit-transition: color 200ms ease;
   transition: color 200ms ease;
 }
-/*# sourceMappingURL=MyPlaylistName.css.map */
+/*# sourceMappingURL=PersonalPlaylistName.css.map */

@@ -1,16 +1,16 @@
-.recentlyPlayedSong img {
+.recentlyPlayedAlbum .recentlyPlayedAlbum__cover {
   -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
           box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 200ms ease;
   transition: all 200ms ease;
 }
 
-.recentlyPlayedSong {
+.recentlyPlayedAlbum {
   margin-right: 5px;
   padding: 7px 5px 0;
 }
 
-.recentlyPlayedSong img {
+.recentlyPlayedAlbum .recentlyPlayedAlbum__cover {
   width: 115px;
   cursor: pointer;
   border-radius: 50%;
@@ -18,13 +18,13 @@
 }
 
 @media screen and (min-width: 768px) {
-  .recentlyPlayedSong img {
-    width: 190px;
+  .recentlyPlayedAlbum .recentlyPlayedAlbum__cover {
+    width: 150px;
     border: 7px solid #1d2226;
   }
 }
 
-.recentlyPlayedSong .recentlyPlayedSong__artist {
+.recentlyPlayedAlbum .recentlyPlayedAlbum__artists {
   margin: 6px 0 2px 0;
   cursor: default;
   text-align: center;
@@ -34,12 +34,12 @@
 }
 
 @media screen and (min-width: 768px) {
-  .recentlyPlayedSong .recentlyPlayedSong__artist {
+  .recentlyPlayedAlbum .recentlyPlayedAlbum__artists {
     font-size: 0.9rem;
   }
 }
 
-.recentlyPlayedSong:first-child {
+.recentlyPlayedAlbum:first-child {
   margin-left: 15px;
 }
-/*# sourceMappingURL=RecentlyPlayedSong.css.map */
+/*# sourceMappingURL=RecentlyPlayedAlbum.css.map */

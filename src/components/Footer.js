@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { getArtists } from "../helpers";
+import { truncate, getArtists } from "../helpers";
 import { SpotifyContext } from "../ContextApi/SpotifyState";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
@@ -9,14 +9,13 @@ import FavoriteIcon from "@material-ui/icons/Favorite";
 import PauseIcon from "@material-ui/icons/Pause";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import VolumeUpIcon from "@material-ui/icons/VolumeUp";
-import MusicNote from "../images/musicNote.png";
+import musicNote from "../images/musicNote.png";
 import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 import Slider from "@material-ui/core/Slider";
 import "../css/Footer.css";
 
 const Footer = () => {
   const [{ isPlaying, songSelected }, dispatch] = useContext(SpotifyContext);
-  console.log(songSelected);
 
   const handlePlayClick = () => {
     dispatch({
@@ -30,17 +29,19 @@ const Footer = () => {
       <div className="footer__left">
         <img
           className="footer__image"
-          src={
-            songSelected.track
-              ? songSelected.track.album.images[0].url
-              : MusicNote
-          }
-          alt={songSelected.track?.album.name}
+          src={songSelected.albumImage ? songSelected.albumImage : musicNote}
+          alt={songSelected.albumName}
         />
         <div className="footer__songInfo">
-          <h4 className="footer__song">{songSelected.track?.name}</h4>
+          <h4 className="footer__song">
+            {window.innerWidth < 1150
+              ? truncate(songSelected.trackName, 22)
+              : songSelected.trackName}
+          </h4>
           <p className="footer__artists">
-            {songSelected.track && getArtists(songSelected.track.artists)}
+            {window.innerWidth < 1150
+              ? truncate(songSelected.artistsName, 22)
+              : songSelected.artistsName}
           </p>
         </div>
       </div>
