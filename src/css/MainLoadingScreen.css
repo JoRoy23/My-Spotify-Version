@@ -1,0 +1,19 @@
+.mainLoadingScreen {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#31373c), to(black));
+  background-image: linear-gradient(to bottom, #31373c, black);
+}
+
+.mainLoadingScreen__logo {
+  width: 150px;
+}
+/*# sourceMappingURL=MainLoadingScreen.css.map */

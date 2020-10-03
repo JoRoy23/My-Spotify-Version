@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,kBAAkB,CAAC;EACjB,MAAM,EAAE,KAAK;EACb,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EACnB,gBAAgB,EAAE,0CAIjB;CAKF;;AAHE,AAAD,wBAAO,CAAC;EACN,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "../scss/MainLoadingScreen.scss",
+        "../scss/_config.scss"
+    ],
+    "names": [],
+    "file": "MainLoadingScreen.css"
+}

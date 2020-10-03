@@ -1,0 +1,143 @@
+.featuredItem .featuredItem__header .featuredItem__icons, .featuredItem .featuredItem__info .featuredItem__cover, .featuredItem .featuredItem__info .featuredItem__playButton {
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.featuredItem .featuredItem__header .featuredItem__icons:hover, .featuredItem .featuredItem__info .featuredItem__playButton:hover {
+  -webkit-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+          box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1), inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.featuredItem {
+  font-family: "Arial";
+  font-weight: bold;
+}
+
+.featuredItem .featuredItem__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 20px;
+}
+
+.featuredItem .featuredItem__header .featuredItem__icons {
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+  padding: 7px;
+  font-size: 20px;
+  border-radius: 50%;
+  border: 2px solid #1d2226;
+  background-color: #292e32;
+  cursor: default;
+  color: #c8c8c8;
+  border: 2px solid #21272c;
+}
+
+.featuredItem .featuredItem__header .featuredItem__right .featuredItem__icons:first-child {
+  margin-right: 20px;
+}
+
+.featuredItem .featuredItem__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 25px;
+}
+
+.featuredItem .featuredItem__info .featuredItem__cover {
+  width: 160px;
+  margin: 10px 0 15px;
+  border-radius: 15px;
+  border: 5px solid #1d2226;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__cover {
+    width: 250px;
+    margin: 15px 0;
+  }
+}
+
+.featuredItem .featuredItem__info .featuredItem__name {
+  margin-bottom: 3px;
+  font-size: 1.3rem;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__name {
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+  }
+}
+
+.featuredItem .featuredItem__info .featuredItem__nbTracks,
+.featuredItem .featuredItem__info .featuredItem__nbFollowers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+  font-size: 0.7rem;
+  color: #6e6e6e;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__nbTracks,
+  .featuredItem .featuredItem__info .featuredItem__nbFollowers {
+    margin-bottom: 18px;
+    font-size: 0.8rem;
+  }
+}
+
+.featuredItem .featuredItem__info .featuredItem__nbTracks .featuredItem__dot,
+.featuredItem .featuredItem__info .featuredItem__nbFollowers .featuredItem__dot {
+  margin: 0 5px;
+  font-size: 0.85rem;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__nbTracks .featuredItem__dot,
+  .featuredItem .featuredItem__info .featuredItem__nbFollowers .featuredItem__dot {
+    font-size: 1rem;
+  }
+}
+
+.featuredItem .featuredItem__info .featuredItem__playButton {
+  padding: 7px 45px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  outline: none;
+  border-radius: 30px;
+  border: 3px solid #02a043;
+  background-color: #1db854;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__playButton {
+    padding: 7px 55px;
+    font-size: 0.9rem;
+  }
+}
+/*# sourceMappingURL=FeaturedItem.css.map */

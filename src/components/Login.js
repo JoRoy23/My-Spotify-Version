@@ -16,9 +16,7 @@ function Login() {
           <a className="button button--login" href={loginUrl}>
             LOGIN
           </a>
-          <a className=" button button--signup" href="">
-            SIGN UP
-          </a>
+          <button className=" button button--signup">SIGN UP</button>
         </div>
       </div>
     </div>

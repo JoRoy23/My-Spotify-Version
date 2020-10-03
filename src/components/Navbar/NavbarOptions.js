@@ -40,16 +40,6 @@ function NavbarOptions() {
             <h2 className="navbarOptions__text">Library</h2>
           </NavLink>
         </li>
-        <li className="navbarOptions__list">
-          <NavLink
-            className="navbarOptions__item"
-            activeClassName="navbarOptions__item--selected"
-            to="/spotify"
-          >
-            <LibraryMusicIcon className="navbarOptions__icon" />
-            <h2 className="navbarOptions__text">Spotify</h2>
-          </NavLink>
-        </li>
       </ul>
     </React.Fragment>
   );

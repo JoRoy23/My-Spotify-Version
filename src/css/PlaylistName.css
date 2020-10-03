@@ -1,0 +1,23 @@
+.playlistName {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 15px;
+  text-decoration: none;
+  cursor: default;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Arial";
+  color: #6e6e6e;
+}
+
+.playlistName:last-child {
+  margin-bottom: 0;
+}
+
+.playlistName:hover {
+  color: #c8c8c8;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+/*# sourceMappingURL=PlaylistName.css.map */

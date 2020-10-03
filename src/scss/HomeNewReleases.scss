@@ -1,0 +1,29 @@
+@import "config.scss";
+
+.homeNewReleases {
+  margin-bottom: 36px;
+  font-weight: bold;
+  font-family: map-get($fonts, primary);
+  color: map-get($colors, secondaryAccent);
+  @include ipad {
+    margin-bottom: 48px;
+  }
+
+  .homeNewReleases__title {
+    margin: 0 0 13px 20px;
+    cursor: default;
+    font-size: 1.3rem;
+    @include ipad {
+      font-size: 1.5rem;
+    }
+  }
+
+  .homeNewReleases__albums {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 7px;
+    @include ipad {
+      padding: 0 7px;
+    }
+  }
+}

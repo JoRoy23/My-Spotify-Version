@@ -1,18 +1,26 @@
 import React, { useContext } from "react";
-import { getArtists, truncate } from "../helpers";
+import { truncate } from "../helpers";
 import { SpotifyContext } from "../ContextApi/SpotifyState";
-import SongSelectedBar from "./SongSelectedBar";
 import Navbar from "./Navbar/Navbar";
 import Content from "./Content";
 import Footer from "./Footer";
 import "../css/Player.css";
 
 function Player() {
-  const [{ songSelected }] = useContext(SpotifyContext);
+  const [{ isPlaying, mobileFooterVisible }, dispatch] = useContext(
+    SpotifyContext
+  );
 
-  // The bar who's showing the song selected on mobile is visible
-  const styleTrackSelectedBar = () => {
-    return songSelected.length !== 0 ? "songSelectedBar--visible" : "";
+  // Change the status of the play button when a click occur
+  const handlePlayButtonClick = () => {
+    dispatch({
+      type: "SET_PLAY-BUTTON",
+      isPlaying: !isPlaying,
+    });
+  };
+
+  const setFooterVisibility = () => {
+    return mobileFooterVisible ? "footer footer--visible" : "footer";
   };
 
   return (
@@ -21,22 +29,10 @@ function Player() {
         <Navbar />
         <Content />
       </div>
-      <SongSelectedBar //
-        trackName={
-          window.innerWidth < 600
-            ? truncate(songSelected.trackName, 19)
-            : songSelected.trackName
-        }
-        artistsName={
-          window.innerWidth < 600
-            ? truncate(songSelected.artistsName, 19)
-            : songSelected.artistsName
-        }
-        albumImage={songSelected.albumImage}
-        albumName={songSelected.albumName}
-        styleBar={styleTrackSelectedBar}
+      <Footer
+        footerVisibility={setFooterVisibility()}
+        onPlayButtonClick={handlePlayButtonClick}
       />
-      <Footer />
     </div>
   );
 }

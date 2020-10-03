@@ -3,47 +3,42 @@
 .addPlaylist {
   display: none;
   @include ipad {
-    display: flex;
-    align-items: center;
+    display: block;
     position: absolute;
     bottom: 90px;
     left: 0;
     width: 100%;
-    height: 80px;
-    padding: 0 20px;
+    padding: 20px;
     border-top: 2px solid map-get($colors, navbarBorder);
     font-weight: bold;
     font-family: map-get($fonts, primary);
   }
 
-  &__icon {
+  &__container {
     display: flex;
-    @include roundButton(4px, 20px);
-    @extend %shadow;
+    align-items: center;
+    .addPlaylist__icon {
+      display: flex;
+      @include roundButton(4px, 20px);
+      @extend %shadow;
+    }
+
+    .addPlaylist__title {
+      margin-left: 15px;
+      cursor: default;
+      font-size: 0.9rem;
+      color: map-get($colors, greyText);
+    }
   }
 
-  &__icon:hover {
-    @extend %shadowOnClick;
-  }
+  &__container:hover {
+    .addPlaylist__title {
+      color: map-get($colors, secondaryAccent);
+      transition: color 200ms ease;
+    }
 
-  &__icon:hover + &__title {
-    color: map-get($colors, secondaryAccent);
-    transition: color 200ms ease;
-  }
-
-  &__title {
-    margin-left: 15px;
-    cursor: default;
-    font-size: 0.9rem;
-    color: map-get($colors, greyText);
-  }
-
-  &__title:hover {
-    color: map-get($colors, secondaryAccent);
-    transition: color 200ms ease;
-  }
-
-  &__title:hover ~ &__icon {
-    @extend %shadowOnClick;
+    .addPlaylist__icon {
+      @extend %shadowOnClick;
+    }
   }
 }

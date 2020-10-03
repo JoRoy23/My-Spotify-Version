@@ -11,10 +11,11 @@ const getArtists = (artists) => {
   return artistsList?.join(", ");
 };
 
-// Customizing a playlist url with the genre and the name as string argument
-const customizePlaylistUrl = (genre, name) => {
-  const url = name.split(" ").join("-");
-  return `/playlist/${genre}/${url}`;
+// Customizing a url with the category and the name as string argument for a playlist, album, podcast,...
+const customizeUrl = (type, category, name) => {
+  category = category.split(" ").join("-").replace(/\//g, "-");
+  name = name.split(" ").join("-");
+  return `/${type}/${category}/${name}`;
 };
 
 // Get the year of a date
@@ -22,4 +23,4 @@ const getDateYear = (str) => {
   const date = new Date(str);
   return date.getFullYear();
 };
-export { truncate, getArtists, customizePlaylistUrl, getDateYear };
+export { truncate, getArtists, customizeUrl, getDateYear };

@@ -1,0 +1,91 @@
+@import "./config.scss";
+
+.rowItem {
+  margin-right: 5px;
+  padding: 7px 5px 0;
+  cursor: default;
+
+  .rowItem__cover {
+    width: 145px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 5px solid map-get($colors, blackBorder);
+    @extend %shadow;
+    @include ipad {
+      width: 180px;
+      border: 7px solid map-get($colors, blackBorder);
+    }
+  }
+
+  .rowItem__cover:hover {
+    @include ipad {
+      transform: scale(1.04);
+      transition: transform 200ms ease;
+    }
+  }
+
+  .rowItem__cover--round {
+    width: 115px;
+    border-radius: 50%;
+    @include ipad {
+      width: 150px;
+    }
+  }
+
+  .rowItem__description {
+    margin: 9px 0 2px 0;
+    width: 145px;
+    overflow-x: hidden;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: map-get($colors, secondaryAccent);
+    @include ipad {
+      font-size: 0.9rem;
+      width: 180px;
+    }
+  }
+
+  .rowItem__artists {
+    margin: 6px 0 2px 0;
+    width: 115px;
+    cursor: default;
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: map-get($colors, secondaryAccent);
+    @include ipad {
+      width: 150px;
+      font-size: 0.9rem;
+    }
+  }
+
+  .rowItem__name {
+    margin: 9px 0 2px 0;
+    width: 145px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    line-height: 1.4;
+    color: map-get($colors, secondaryAccent);
+    @include ipad {
+      font-size: 0.9rem;
+      width: 180px;
+    }
+  }
+
+  .rowItem__publisher {
+    width: 145px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: map-get($colors, greyText);
+    @include ipad {
+      font-size: 0.8rem;
+      width: 180px;
+    }
+  }
+}
+
+.rowItem:first-child {
+  margin-left: 15px;
+}

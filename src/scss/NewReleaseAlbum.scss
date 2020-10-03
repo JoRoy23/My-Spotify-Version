@@ -6,6 +6,8 @@
   padding-right: 1.4px;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: map-get($colors, secondaryAccent);
   border-radius: 10px;
   border: 2.5px solid map-get($colors, primary);
   background-color: map-get($colors, button);
@@ -16,11 +18,11 @@
   }
 
   img {
-    width: 40px;
+    width: 35px;
     height: 100%;
     border-radius: 10px 0 0 10px;
     @include ipad {
-      width: 50px;
+      width: 45px;
     }
   }
 

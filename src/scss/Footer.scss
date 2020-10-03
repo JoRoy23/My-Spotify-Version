@@ -1,22 +1,24 @@
 @import "config.scss";
 
 .footer {
-  display: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  font-family: map-get($fonts, primary);
+  color: map-get($colors, secondaryAccent);
+  background-color: map-get($colors, navbarPrimary);
+  border-bottom: 3px solid map-get($colors, backgroundSecondary);
   @extend %shadow;
   @include ipad {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
     height: 90px;
-    padding: 10px 20px;
-    font-family: map-get($fonts, primary);
-    color: map-get($colors, secondaryAccent);
-    background-color: map-get($colors, navbarPrimary);
+    bottom: 0;
+    z-index: 100;
+    border-bottom: none;
   }
 
   &__left {
@@ -24,12 +26,18 @@
     align-items: center;
 
     .footer__image {
-      width: 65px;
-      height: 65px;
+      width: 48px;
+      height: 48px;
       margin-right: 10px;
-      border-radius: 10px;
-      border: 5px solid map-get($colors, blackBorder);
+      border-radius: 5px;
+      border: 3px solid map-get($colors, blackBorder);
       @extend %shadow;
+      @include ipad {
+        width: 65px;
+        height: 65px;
+        border-radius: 10px;
+        border: 5px solid map-get($colors, blackBorder);
+      }
     }
 
     .footer__songInfo {
@@ -40,15 +48,21 @@
 
       .footer__song {
         margin-bottom: 3px;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         font-weight: bold;
         color: map-get($colors, secondaryAccent);
+        @include ipad {
+          font-size: 0.9rem;
+        }
       }
 
       .footer__artists {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         font-weight: 500;
         color: map-get($colors, greyText);
+        @include ipad {
+          font-size: 0.85rem;
+        }
       }
     }
   }
@@ -68,19 +82,36 @@
     }
 
     .footer__button--small {
-      padding: 6px;
-      font-size: 15px;
+      @include roundButton(9px, 15px);
+      @include ipad {
+        padding: 6px;
+        font-size: 15px;
+      }
     }
 
-    .footer__button-medium {
-      padding: 10px;
-      font-size: 20px;
+    .footer__button--small:last-child {
+      display: none;
+      @include ipad {
+        display: inline-block;
+      }
+    }
+
+    .footer__button--medium {
+      display: none;
+      @include ipad {
+        display: inline-block;
+        padding: 10px;
+        font-size: 20px;
+      }
     }
 
     .footer__button--pause,
     .footer__button--play {
-      padding: 13px;
-      font-size: 25px;
+      @include roundButton(9px, 15px);
+      @include ipad {
+        padding: 13px;
+        font-size: 25px;
+      }
     }
 
     .footer__button--pause {
@@ -91,9 +122,11 @@
   }
 
   &__right {
-    display: flex;
-    align-items: center;
-
+    display: none;
+    @include ipad {
+      display: flex;
+      align-items: center;
+    }
     .footer__icon {
       margin-right: 15px;
       font-size: 20px;
@@ -105,5 +138,13 @@
       width: 75px;
       color: map-get($colors, primaryAccent);
     }
+  }
+}
+
+.footer--visible {
+  bottom: 64px;
+  transition: bottom 200ms ease;
+  @include ipad {
+    bottom: 0;
   }
 }

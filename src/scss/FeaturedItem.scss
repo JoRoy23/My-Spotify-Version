@@ -1,0 +1,99 @@
+@import "./config.scss";
+
+.featuredItem {
+  font-family: map-get($fonts, primary);
+  font-weight: bold;
+
+  .featuredItem__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+
+    .featuredItem__icons {
+      @include roundButton(7px, 20px);
+      border: 2px solid map-get($colors, primary);
+      @extend %shadow;
+    }
+    .featuredItem__icons:hover {
+      @extend %shadowOnClick;
+    }
+
+    .featuredItem__right {
+      .featuredItem__icons:first-child {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .featuredItem__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+
+    .featuredItem__cover {
+      width: 160px;
+      margin: 10px 0 15px;
+      border-radius: 15px;
+      border: 5px solid map-get($colors, blackBorder);
+      @extend %shadow;
+      @include ipad {
+        width: 250px;
+        margin: 15px 0;
+      }
+    }
+
+    .featuredItem__name {
+      margin-bottom: 3px;
+      font-size: 1.3rem;
+      color: map-get($colors, secondaryAccent);
+      @include ipad {
+        margin-bottom: 5px;
+        font-size: 1.5rem;
+      }
+    }
+
+    .featuredItem__nbTracks,
+    .featuredItem__nbFollowers {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+      font-size: 0.7rem;
+      color: map-get($colors, greyText);
+      @include ipad {
+        margin-bottom: 18px;
+        font-size: 0.8rem;
+      }
+
+      .featuredItem__dot {
+        margin: 0 5px;
+        font-size: 0.85rem;
+        color: map-get($colors, secondaryAccent);
+        @include ipad {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .featuredItem__playButton {
+      padding: 7px 45px;
+      font-size: 0.85rem;
+      font-weight: bold;
+      outline: none;
+      border-radius: 30px;
+      border: 3px solid map-get($colors, greenBorder);
+      background-color: map-get($colors, primaryAccent);
+      color: map-get($colors, secondaryAccent);
+      @extend %shadow;
+      @include ipad {
+        padding: 7px 55px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .featuredItem__playButton:hover {
+      @extend %shadowOnClick;
+    }
+  }
+}

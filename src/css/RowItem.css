@@ -1,0 +1,118 @@
+.rowItem .rowItem__cover {
+  -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+          box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+}
+
+.rowItem {
+  margin-right: 5px;
+  padding: 7px 5px 0;
+  cursor: default;
+}
+
+.rowItem .rowItem__cover {
+  width: 145px;
+  cursor: pointer;
+  border-radius: 15px;
+  border: 5px solid #1d2226;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__cover {
+    width: 180px;
+    border: 7px solid #1d2226;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__cover:hover {
+    -webkit-transform: scale(1.04);
+            transform: scale(1.04);
+    -webkit-transition: -webkit-transform 200ms ease;
+    transition: -webkit-transform 200ms ease;
+    transition: transform 200ms ease;
+    transition: transform 200ms ease, -webkit-transform 200ms ease;
+  }
+}
+
+.rowItem .rowItem__cover--round {
+  width: 115px;
+  border-radius: 50%;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__cover--round {
+    width: 150px;
+  }
+}
+
+.rowItem .rowItem__description {
+  margin: 9px 0 2px 0;
+  width: 145px;
+  overflow-x: hidden;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__description {
+    font-size: 0.9rem;
+    width: 180px;
+  }
+}
+
+.rowItem .rowItem__artists {
+  margin: 6px 0 2px 0;
+  width: 115px;
+  cursor: default;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__artists {
+    width: 150px;
+    font-size: 0.9rem;
+  }
+}
+
+.rowItem .rowItem__name {
+  margin: 9px 0 2px 0;
+  width: 145px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__name {
+    font-size: 0.9rem;
+    width: 180px;
+  }
+}
+
+.rowItem .rowItem__publisher {
+  width: 145px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #6e6e6e;
+}
+
+@media screen and (min-width: 768px) {
+  .rowItem .rowItem__publisher {
+    font-size: 0.8rem;
+    width: 180px;
+  }
+}
+
+.rowItem:first-child {
+  margin-left: 15px;
+}
+/*# sourceMappingURL=RowItem.css.map */

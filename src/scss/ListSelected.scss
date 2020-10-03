@@ -1,0 +1,30 @@
+@import "config.scss";
+
+.listSelected {
+  height: 100vh;
+  overflow-y: scroll;
+  color: map-get($colors, secondaryAccent);
+  background-image: linear-gradient(
+    to bottom,
+    map-get($colors, backgroundPrimary),
+    map-get($colors, backgroundSecondary)
+  );
+  @include ipad {
+    flex-grow: 1;
+    overflow-y: scroll;
+  }
+
+  .listSelected__tracksContainer {
+    padding-bottom: 80px;
+    @include ipad {
+      padding-bottom: 100px;
+    }
+  }
+
+  .listSelected__tracksContainer --bigPadding {
+    padding-bottom: 150px;
+    @include ipad {
+      padding-bottom: 100px;
+    }
+  }
+}

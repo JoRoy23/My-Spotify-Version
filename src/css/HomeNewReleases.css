@@ -1,0 +1,40 @@
+.homeNewReleases {
+  margin-bottom: 36px;
+  font-weight: bold;
+  font-family: "Arial";
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .homeNewReleases {
+    margin-bottom: 48px;
+  }
+}
+
+.homeNewReleases .homeNewReleases__title {
+  margin: 0 0 13px 20px;
+  cursor: default;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .homeNewReleases .homeNewReleases__title {
+    font-size: 1.5rem;
+  }
+}
+
+.homeNewReleases .homeNewReleases__albums {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 7px;
+}
+
+@media screen and (min-width: 768px) {
+  .homeNewReleases .homeNewReleases__albums {
+    padding: 0 7px;
+  }
+}
+/*# sourceMappingURL=HomeNewReleases.css.map */

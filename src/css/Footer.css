@@ -22,30 +22,32 @@
 }
 
 .footer {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  padding: 10px 20px;
+  font-family: "Arial";
+  color: #c8c8c8;
+  background-color: #16191b;
+  border-bottom: 3px solid black;
 }
 
 @media screen and (min-width: 768px) {
   .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
     height: 90px;
-    padding: 10px 20px;
-    font-family: "Arial";
-    color: #c8c8c8;
-    background-color: #16191b;
+    bottom: 0;
+    z-index: 100;
+    border-bottom: none;
   }
 }
 
@@ -59,11 +61,20 @@
 }
 
 .footer__left .footer__image {
-  width: 65px;
-  height: 65px;
+  width: 48px;
+  height: 48px;
   margin-right: 10px;
-  border-radius: 10px;
-  border: 5px solid #1d2226;
+  border-radius: 5px;
+  border: 3px solid #1d2226;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__left .footer__image {
+    width: 65px;
+    height: 65px;
+    border-radius: 10px;
+    border: 5px solid #1d2226;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -75,15 +86,27 @@
 
 .footer__left .footer__songInfo .footer__song {
   margin-bottom: 3px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: bold;
   color: #c8c8c8;
 }
 
+@media screen and (min-width: 768px) {
+  .footer__left .footer__songInfo .footer__song {
+    font-size: 0.9rem;
+  }
+}
+
 .footer__left .footer__songInfo .footer__artists {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: #6e6e6e;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__left .footer__songInfo .footer__artists {
+    font-size: 0.85rem;
+  }
 }
 
 .footer__center {
@@ -100,19 +123,65 @@
 }
 
 .footer__center .footer__button--small {
-  padding: 6px;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+  padding: 9px;
   font-size: 15px;
+  border-radius: 50%;
+  border: 2px solid #1d2226;
+  background-color: #292e32;
+  cursor: default;
+  color: #c8c8c8;
 }
 
-.footer__center .footer__button-medium {
-  padding: 10px;
-  font-size: 20px;
+@media screen and (min-width: 768px) {
+  .footer__center .footer__button--small {
+    padding: 6px;
+    font-size: 15px;
+  }
+}
+
+.footer__center .footer__button--small:last-child {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__center .footer__button--small:last-child {
+    display: inline-block;
+  }
+}
+
+.footer__center .footer__button--medium {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__center .footer__button--medium {
+    display: inline-block;
+    padding: 10px;
+    font-size: 20px;
+  }
 }
 
 .footer__center .footer__button--pause,
 .footer__center .footer__button--play {
-  padding: 13px;
-  font-size: 25px;
+  -webkit-box-sizing: initial;
+          box-sizing: initial;
+  padding: 9px;
+  font-size: 15px;
+  border-radius: 50%;
+  border: 2px solid #1d2226;
+  background-color: #292e32;
+  cursor: default;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__center .footer__button--pause,
+  .footer__center .footer__button--play {
+    padding: 13px;
+    font-size: 25px;
+  }
 }
 
 .footer__center .footer__button--pause {
@@ -121,12 +190,18 @@
 }
 
 .footer__right {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .footer__right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .footer__right .footer__icon {
@@ -139,5 +214,17 @@
 .footer__right .footer__slider {
   width: 75px;
   color: #1db854;
+}
+
+.footer--visible {
+  bottom: 64px;
+  -webkit-transition: bottom 200ms ease;
+  transition: bottom 200ms ease;
+}
+
+@media screen and (min-width: 768px) {
+  .footer--visible {
+    bottom: 0;
+  }
 }
 /*# sourceMappingURL=Footer.css.map */

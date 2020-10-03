@@ -1,43 +1,52 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
-import Header from "./Header";
-import PlaylistRow from "./PlaylistRow";
-import RecentlyPlayedRow from "./RecentlyPlayedRow";
-import NewReleasesSection from "./NewReleasesSection";
-import SettingsIcon from "@material-ui/icons/Settings";
+import HomeHeader from "./HomeHeader";
+import HomeRow from "./HomeRow";
+import HomeNewReleases from "./HomeNewReleases";
 import "../../css/HomeContent.css";
 
 function HomeContent() {
   const [state] = useContext(SpotifyContext);
+
   return (
     <div className="homeContent">
-      <Header />
-      <div className="setting__container">
-        <SettingsIcon className="setting__icon" />
-      </div>
-      <NewReleasesSection newReleasesData={state.newReleases} />
-      <RecentlyPlayedRow recentlyPlayedData={state.recentlyPlayed} />
-      <PlaylistRow
-        playlistData={state.featuredPlaylists}
-        playlistRowTitle={"Popular playlists"}
+      <HomeHeader />
+      <HomeNewReleases
+        rowTitle={"New releases"}
+        newReleasesData={state.newReleases}
       />
-      <PlaylistRow playlistData={state.popPlaylists} playlistRowTitle={"Pop"} />
-      <PlaylistRow
-        playlistData={state.dancePlaylists}
-        playlistRowTitle={"Dance/Electronic"}
+      <HomeRow rowTitle={"Recently played"} rowData={state.recentlyPlayed} />
+      <HomeRow
+        rowTitle={"Popular playlists"}
+        rowData={state.featuredPlaylists}
+        // playlistsArtists={state.featuredPlaylistsArtists}
       />
-      <PlaylistRow
-        playlistData={state.hiphopPlaylists}
-        playlistRowTitle={"Hip-hop"}
+      <HomeRow
+        rowTitle={"Pop"}
+        rowData={state.popPlaylists}
+        // playlistsArtists={state.popPlaylistsArtists}
       />
-      <PlaylistRow
-        playlistData={state.rockPlaylists}
-        playlistRowTitle={"Rock"}
+      <HomeRow
+        rowTitle={"Dance/Electronic"}
+        rowData={state.dancePlaylists}
+        // playlistsArtists={state.dancePlaylistsArtists}
       />
-      <PlaylistRow
-        playlistData={state.countryPlaylists}
-        playlistRowTitle={"Country"}
+      <HomeRow
+        rowTitle={"Hip-hop"}
+        rowData={state.hiphopPlaylists}
+        // playlistsArtists={state.hiphopPlaylistsArtists}
       />
+      <HomeRow
+        rowTitle={"Rock"}
+        rowData={state.rockPlaylists}
+        // playlistsArtists={state.rockPlaylistsArtists}
+      />
+      <HomeRow
+        rowTitle={"Country"}
+        rowData={state.countryPlaylists}
+        // playlistsArtists={state.countryPlaylistsArtists}
+      />
+      <HomeRow rowTitle={"Podcasts"} rowData={state.podcastsShow} />
     </div>
   );
 }

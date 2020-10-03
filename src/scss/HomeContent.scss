@@ -13,22 +13,4 @@
     flex-grow: 1;
     overflow-y: scroll;
   }
-
-  .setting__container {
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px 20px 10px;
-    @include ipad {
-      display: none;
-    }
-
-    .setting__icon {
-      @include roundButton(6px, 18px);
-      @extend %shadow;
-    }
-
-    .setting__icon:hover {
-      @extend %shadowOnClick;
-    }
-  }
 }

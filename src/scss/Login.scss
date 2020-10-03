@@ -79,6 +79,7 @@
       }
 
       .button--signup {
+        outline: none;
         border: 3px solid map-get($colors, blackBorder);
         background-color: map-get($colors, secondary);
       }

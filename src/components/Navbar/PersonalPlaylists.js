@@ -1,18 +1,19 @@
 import React, { useContext } from "react";
 import { SpotifyContext } from "../../ContextApi/SpotifyState";
 import { spotifyApi } from "../../App";
-import PersonalPlaylistName from "./PersonalPlaylistName";
+import { getArtists } from "../../helpers";
+import PlaylistName from "./PlaylistName";
 import "../../css/PersonalPlaylists.css";
 
 function PersonalPlaylists() {
   const [{ userPlaylists }, dispatch] = useContext(SpotifyContext);
 
-  // Render the tracks/header of the playlist page when a user playlist is clicked
-  const handlePersonalPlaylistClick = (userPlaylistId) => {
+  // Render the tracks/header of the playlist page when a personal playlist is selected
+  const handlePlaylistClick = (userPlaylistId) => {
     // Fetch tracks info of the user playlists
-    async function getUserPlaylistTracks() {
+    async function getUserPlaylistTracks(_id) {
       const userPlaylistTracksResponse = await spotifyApi.getPlaylistTracks(
-        userPlaylistId
+        _id
       );
 
       const userPlaylistTracks = userPlaylistTracksResponse.items.map(
@@ -22,9 +23,10 @@ function PersonalPlaylists() {
           const artists = userPlaylistTrack.track.artists;
 
           return {
-            trackId: track.id,
+            id: track.id,
+            type: track.type,
             trackName: track.name,
-            artistsName: artists,
+            artistsName: getArtists(artists),
             albumImage: album.images[0].url,
             albumName: album.name,
           };
@@ -32,43 +34,51 @@ function PersonalPlaylists() {
       );
 
       dispatch({
-        type: "SET_TRACKS-OF-PLAYLIST/ALBUM-SELECTED",
-        tracksOfPlaylistSelected: userPlaylistTracks,
+        type: "SET_ITEMS-LIST-SELECTED",
+        itemsListSelected: userPlaylistTracks,
       });
     }
-    getUserPlaylistTracks();
+    getUserPlaylistTracks(userPlaylistId);
 
     // Fetch playlist info of the user playlists
-    async function getUserPlaylist() {
-      const userPlaylistInfoResponse = await spotifyApi.getPlaylist(
-        userPlaylistId
-      );
+    async function getUserPlaylist(_id) {
+      const userPlaylistInfoResponse = await spotifyApi.getPlaylist(_id);
 
-      const { followers, name, owner, images } = userPlaylistInfoResponse;
+      const {
+        id,
+        type,
+        followers,
+        name,
+        owner,
+        images,
+      } = userPlaylistInfoResponse;
       const userPlaylistInfo = {
-        featuredCoverFollowers: followers,
-        featuredCoverName: name,
-        featuredCoverOwner: owner,
-        featuredCoverImage: images,
+        id: id,
+        type: type,
+        playlistFollowers: followers.total,
+        playlistName: name,
+        playlistOwner: owner.display_name,
+        playlistImage: images[0]?.url,
       };
 
       dispatch({
-        type: "SET_FEATUREDCOVER-OF-PLAYLIST/ALBUM-SELECTED",
-        featuredOfPlaylistSelected: userPlaylistInfo,
+        type: "SET_FEATURED-ITEM",
+        featuredItem: userPlaylistInfo,
       });
     }
-    getUserPlaylist();
+    getUserPlaylist(userPlaylistId);
   };
 
   // Rendering user playlists
   const renderingUserPlaylists = () => {
-    const userPlaylistsList = userPlaylists.map((userPlaylist) => {
+    const userPlaylistsList = userPlaylists.map((playlist) => {
       return (
-        <PersonalPlaylistName
-          key={userPlaylist.userPlaylistId}
-          userPlaylistId={userPlaylist.userPlaylistId}
-          userPlaylistName={userPlaylist.userPlaylistName}
-          onPersonalPlaylistClick={handlePersonalPlaylistClick}
+        <PlaylistName
+          key={playlist.id}
+          id={playlist.id}
+          type={playlist.type}
+          playlistName={playlist.userPlaylistName}
+          onPlaylistClick={handlePlaylistClick}
         />
       );
     });

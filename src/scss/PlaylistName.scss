@@ -1,0 +1,21 @@
+@import "./config.scss";
+
+.playlistName {
+  display: flex;
+  margin-bottom: 15px;
+  text-decoration: none;
+  cursor: default;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: map-get($fonts, primary);
+  color: map-get($colors, greyText);
+}
+
+.playlistName:last-child {
+  margin-bottom: 0;
+}
+
+.playlistName:hover {
+  color: map-get($colors, secondaryAccent);
+  transition: color 200ms ease;
+}

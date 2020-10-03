@@ -8,7 +8,8 @@
     margin-bottom: 170px;
     overflow-x: hidden;
     overflow-y: scroll;
-    scrollbar-width: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
     font-weight: bold;
     font-family: map-get($fonts, primary);
     color: map-get($colors, secondaryAccent);

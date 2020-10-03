@@ -1,0 +1,17 @@
+@import "./config.scss";
+
+.mainLoadingScreen {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    map-get($colors, backgroundPrimary),
+    map-get($colors, backgroundSecondary)
+  );
+
+  &__logo {
+    width: 150px;
+  }
+}

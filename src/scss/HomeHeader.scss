@@ -1,0 +1,86 @@
+@import "./config.scss";
+
+.homeHeader {
+  @include ipad {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-family: map-get($fonts, primary);
+    color: map-get($colors, secondaryAccent);
+  }
+
+  &__settingContainer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px 20px 10px;
+    @include ipad {
+      display: none;
+    }
+
+    .homeHeader__settingIcon {
+      @include roundButton(6px, 18px);
+      border: 2px solid map-get($colors, primary);
+      @extend %shadow;
+    }
+
+    .homeHeader__settingIcon:hover {
+      @extend %shadowOnClick;
+    }
+  }
+
+  &__left {
+    display: none;
+    @extend %shadowOnClick;
+    @include ipad {
+      display: flex;
+      align-items: center;
+      padding: 4px 5px;
+      overflow-x: hidden;
+      border-radius: 10px;
+      border: 3px solid map-get($colors, primary);
+      background-color: map-get($colors, button);
+    }
+
+    .homeHeader__inputIcon {
+      margin-right: 5px;
+    }
+
+    input {
+      width: 210px;
+      font-size: 0.75rem;
+      color: map-get($colors, secondaryAccent);
+      border: none;
+      background-color: map-get($colors, button);
+    }
+
+    input:focus {
+      outline: none;
+    }
+  }
+
+  &__right {
+    display: none;
+    @include ipad {
+      display: flex;
+      align-items: center;
+    }
+
+    .homeHeader__avatar {
+      margin-right: 5px;
+      width: 26px;
+      cursor: pointer;
+      border-radius: 50%;
+      border: 2px solid map-get($colors, blackBorder);
+      @extend %shadow;
+    }
+
+    .homeHeader__username {
+      cursor: default;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  }
+}

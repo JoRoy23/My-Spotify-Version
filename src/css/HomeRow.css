@@ -1,0 +1,57 @@
+.homeRow {
+  margin-bottom: 35px;
+  font-weight: bold;
+  font-family: "Arial";
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRow {
+    margin-bottom: 40px;
+  }
+}
+
+.homeRow .homeRow__title {
+  margin: 0 0 8px 20px;
+  cursor: default;
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRow .homeRow__title {
+    font-size: 1.5rem;
+  }
+}
+
+.homeRow .homeRow__covers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow-x: scroll;
+  scrollbar-width: none;
+}
+
+.homeRow .homeRow__covers::-webkit-scrollbar {
+  display: none;
+}
+
+.homeRow:last-child {
+  margin-bottom: 80px;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRow:last-child {
+    margin-bottom: 120px;
+  }
+}
+
+.homeRow--updated:last-child {
+  margin-bottom: 150px;
+}
+
+@media screen and (min-width: 768px) {
+  .homeRow--updated:last-child {
+    margin-bottom: 120px;
+  }
+}
+/*# sourceMappingURL=HomeRow.css.map */
