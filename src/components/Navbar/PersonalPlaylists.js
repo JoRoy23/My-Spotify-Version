@@ -8,42 +8,11 @@ import "../../css/PersonalPlaylists.css";
 function PersonalPlaylists() {
   const [{ userPlaylists }, dispatch] = useContext(SpotifyContext);
 
-  // Render the tracks/header of the playlist page when a personal playlist is selected
   const handlePlaylistClick = (userPlaylistId) => {
-    // Fetch tracks info of the user playlists
-    async function getUserPlaylistTracks(_id) {
-      const userPlaylistTracksResponse = await spotifyApi.getPlaylistTracks(
-        _id
-      );
-
-      const userPlaylistTracks = userPlaylistTracksResponse.items.map(
-        (userPlaylistTrack) => {
-          const track = userPlaylistTrack.track;
-          const album = userPlaylistTrack.track.album;
-          const artists = userPlaylistTrack.track.artists;
-
-          return {
-            id: track.id,
-            type: track.type,
-            trackName: track.name,
-            artistsName: getArtists(artists),
-            albumImage: album.images[0].url,
-            albumName: album.name,
-          };
-        }
-      );
-
-      dispatch({
-        type: "SET_ITEMS-LIST-SELECTED",
-        itemsListSelected: userPlaylistTracks,
-      });
-    }
-    getUserPlaylistTracks(userPlaylistId);
-
-    // Fetch playlist info of the user playlists
+    // Informations about the user playlists and the tracks
     async function getUserPlaylist(_id) {
       const userPlaylistInfoResponse = await spotifyApi.getPlaylist(_id);
-
+      // Playlists informations
       const {
         id,
         type,
@@ -61,9 +30,33 @@ function PersonalPlaylists() {
         playlistImage: images[0]?.url,
       };
 
+      const userPlaylistTracks = userPlaylistInfoResponse.tracks.items.map(
+        (userPlaylistTrack) => {
+          // Playlist tracks informations
+          const track = userPlaylistTrack.track;
+          const album = userPlaylistTrack.track.album;
+          const artists = userPlaylistTrack.track.artists;
+
+          return {
+            id: track.id,
+            type: track.type,
+            trackName: track.name,
+            artistsName: getArtists(artists),
+            albumImage: album.images[0].url,
+            albumName: album.name,
+            from: "playlist",
+          };
+        }
+      );
+
       dispatch({
         type: "SET_FEATURED-ITEM",
         featuredItem: userPlaylistInfo,
+      });
+
+      dispatch({
+        type: "SET_ITEMS-LIST-SELECTED",
+        itemsListSelected: userPlaylistTracks,
       });
     }
     getUserPlaylist(userPlaylistId);

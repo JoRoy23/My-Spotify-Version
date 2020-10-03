@@ -154,6 +154,7 @@ function HomeRow({ rowData, rowTitle }) {
               podcastDescription: description,
               podcastImages: images[0].url,
               podcastDuration: duration_ms,
+              from: "show",
             };
           }
         );
