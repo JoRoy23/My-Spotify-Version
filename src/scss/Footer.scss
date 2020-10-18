@@ -25,6 +25,7 @@
     display: flex;
     align-items: center;
 
+    .podcast__image,
     .footer__image {
       width: 48px;
       height: 48px;
@@ -40,14 +41,20 @@
       }
     }
 
+    .podcast__info,
     .footer__songInfo {
+      width: 35vw;
       @include ipad {
         width: 21vw;
-        max-width: 280px;
+        max-width: 600px;
       }
 
+      .podcast__name,
       .footer__song {
         margin-bottom: 3px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 0.85rem;
         font-weight: bold;
         color: map-get($colors, secondaryAccent);
@@ -56,7 +63,11 @@
         }
       }
 
+      .podcast__publisher,
       .footer__artists {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         font-size: 0.8rem;
         font-weight: 500;
         color: map-get($colors, greyText);

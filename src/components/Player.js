@@ -19,6 +19,7 @@ function Player() {
     });
   };
 
+  // Visibilty of the footer on mobile
   const setFooterVisibility = () => {
     return mobileFooterVisible ? "footer footer--visible" : "footer";
   };

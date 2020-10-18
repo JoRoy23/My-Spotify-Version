@@ -6,7 +6,7 @@ import "../../css/ListSelected.css";
 
 function ListSelected({ history }) {
   const [
-    { itemSelected, itemsListSelected, featuredItem },
+    { mobileFooterVisible, itemsListSelected, featuredItem },
     dispatch,
   ] = useContext(SpotifyContext);
 
@@ -25,9 +25,9 @@ function ListSelected({ history }) {
 
   // Define the bottom padding of the items container
   const setItemsContainerPadding = () => {
-    return itemSelected.length !== 0
-      ? "listSelected__tracksContainer listSelected__tracksContainer--bigPadding"
-      : "listSelected__tracksContainer";
+    return mobileFooterVisible
+      ? "listSelected__itemsContainer listSelected__itemsContainer--bigPadding"
+      : "listSelected__itemsContainer";
   };
 
   // Rendering each items of the list selected (playlists, albums, podcasts,...)
@@ -52,11 +52,7 @@ function ListSelected({ history }) {
         featuredItemObject={featuredItem}
         historyObject={history}
       />
-      <div
-        className={`listSelected__tracksContainer ${setItemsContainerPadding()}`}
-      >
-        {renderingListItems()}
-      </div>
+      <div className={setItemsContainerPadding()}>{renderingListItems()}</div>
     </div>
   );
 }

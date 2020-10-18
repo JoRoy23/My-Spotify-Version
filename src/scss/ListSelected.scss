@@ -14,14 +14,14 @@
     overflow-y: scroll;
   }
 
-  .listSelected__tracksContainer {
+  .listSelected__itemsContainer {
     padding-bottom: 80px;
     @include ipad {
       padding-bottom: 100px;
     }
   }
 
-  .listSelected__tracksContainer --bigPadding {
+  .listSelected__itemsContainer--bigPadding {
     padding-bottom: 150px;
     @include ipad {
       padding-bottom: 100px;

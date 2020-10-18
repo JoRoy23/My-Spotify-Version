@@ -1,8 +1,8 @@
 @import "./config.scss";
 
 .newReleaseAlbum {
-  flex: 0 0 45%;
-  margin: 0 auto 8px;
+  // flex: 0 0 45%;
+  // margin: 0 auto 8px;
   padding-right: 1.4px;
   display: flex;
   align-items: center;
@@ -13,7 +13,6 @@
   background-color: map-get($colors, button);
   @extend %shadow;
   @include ipad {
-    margin: 0 auto 12px;
     border: 3.5px solid map-get($colors, primary);
   }
 
@@ -28,6 +27,11 @@
 
   .newReleaseAlbum__title {
     margin-left: 8px;
+    width: 60%;
+    // max-width: 450px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     font-size: 0.7rem;
     font-weight: bold;
     cursor: default;

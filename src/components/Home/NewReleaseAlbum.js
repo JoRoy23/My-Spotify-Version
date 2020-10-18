@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { truncate } from "../../helpers";
 import { customizeUrl } from "../../helpers";
 import "../../css/NewReleaseAlbum.css";
 
@@ -21,7 +20,7 @@ function NewReleaseAlbum({
       }}
     >
       <img src={albumImage[0].url} alt={albumName} />
-      <p className="newReleaseAlbum__title">{truncate(albumName, 15)}</p>
+      <p className="newReleaseAlbum__title">{albumName}</p>
     </NavLink>
   );
 }

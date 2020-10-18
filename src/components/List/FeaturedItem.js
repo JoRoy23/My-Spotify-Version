@@ -8,8 +8,7 @@ import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import "../../css/FeaturedItem.css";
 
 function FeaturedItem({ featuredItemObject, historyObject }) {
-  const [{ isDesktop }] = useContext(SpotifyContext);
-
+  // Rendering the featured item
   const renderingFeaturedItem = () => {
     if (featuredItemObject.type === "playlist") {
       return (
@@ -36,9 +35,7 @@ function FeaturedItem({ featuredItemObject, historyObject }) {
               alt={featuredItemObject.playlistName}
             />
             <h2 className="featuredItem__name">
-              {!isDesktop
-                ? truncate(featuredItemObject.playlistName, 30)
-                : featuredItemObject.playlistName}
+              {featuredItemObject.playlistName}
             </h2>
             <p className="featuredItem__nbFollowers">
               BY {featuredItemObject.playlistOwner.toUpperCase()}{" "}
@@ -74,9 +71,7 @@ function FeaturedItem({ featuredItemObject, historyObject }) {
               alt={featuredItemObject.albumName}
             />
             <h2 className="featuredItem__name">
-              {!isDesktop
-                ? truncate(featuredItemObject.albumName, 30)
-                : featuredItemObject.albumName}
+              {featuredItemObject.albumName}
             </h2>
             <p className="featuredItem__nbTracks">
               {getDateYear(featuredItemObject.albumReleaseDate)}{" "}
@@ -89,7 +84,45 @@ function FeaturedItem({ featuredItemObject, historyObject }) {
           </div>
         </div>
       );
-    } else if (featuredItemObject.type === "episode") {
+    } else if (featuredItemObject.type === "show") {
+      return (
+        <div className="featuredItem">
+          <div className="featuredItem__header">
+            <ArrowBackIosIcon
+              className="featuredItem__icons"
+              onClick={historyObject.goBack}
+            />
+            <div className="featuredItem__right">
+              <FavoriteIcon className="featuredItem__icons" />
+              <MoreHorizIcon className="featuredItem__icons" />
+            </div>
+          </div>
+          <div className="featuredItem__info">
+            <img
+              className="featuredItem__cover"
+              src={
+                featuredItemObject.podcastImage === undefined ||
+                featuredItemObject.podcastImage.length === 0
+                  ? musicNote
+                  : featuredItemObject.podcastImage
+              }
+              alt={featuredItemObject.podcastName}
+            />
+            <h2 className="featuredItem__name">
+              {featuredItemObject.podcastName}
+            </h2>
+            <p className="featuredItem__description">
+              {featuredItemObject.podcastDescription}
+            </p>
+            <p className="featuredItem__nbEpisodes">
+              {featuredItemObject.podcastPublisher}{" "}
+              <span className="featuredItem__dot">•</span>{" "}
+              {featuredItemObject.podcastTotalEpisodes} episodes
+            </p>
+            <button className="featuredItem__playButton">PLAY</button>
+          </div>
+        </div>
+      );
     }
   };
   return <React.Fragment>{renderingFeaturedItem()}</React.Fragment>;

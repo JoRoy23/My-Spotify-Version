@@ -24,17 +24,21 @@
 }
 
 .homeNewReleases .homeNewReleases__albums {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  max-width: 900px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -webkit-column-gap: 10px;
+          column-gap: 10px;
+  row-gap: 7px;
   padding: 0 7px;
 }
 
 @media screen and (min-width: 768px) {
   .homeNewReleases .homeNewReleases__albums {
     padding: 0 7px;
+    row-gap: 10px;
   }
 }
 /*# sourceMappingURL=HomeNewReleases.css.map */

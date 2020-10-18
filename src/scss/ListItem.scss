@@ -28,6 +28,17 @@
     }
 
     .listItem__informations {
+      .listItem__song,
+      .listItem__artist {
+        width: 35vw;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        @include ipad {
+          width: 29vw;
+          max-width: 500px;
+        }
+      }
       .listItem__song {
         margin-bottom: 3px;
         font-size: 0.85rem;
@@ -57,5 +68,115 @@
 
   .listItem__icon:hover {
     @extend %shadowOnClick;
+  }
+
+  .listItem__mainContainer {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    border: 3px solid map-get($colors, blackBorder);
+    background-color: map-get($colors, secondary);
+    @extend %shadow;
+    .listItem__topContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+
+      .topContainer__left {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .listItem__image {
+          width: 48px;
+          height: 48px;
+          border-radius: 5px;
+          border: 3px solid map-get($colors, blackBorder);
+          @extend %shadow;
+          @include ipad {
+            width: 60px;
+            height: 60px;
+          }
+        }
+
+        .topContainer__infos {
+          margin-left: 10px;
+          .listItem__name {
+            width: 50vw;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 0.85rem;
+            font-weight: bold;
+            color: map-get($colors, secondaryAccent);
+            @include ipad {
+              width: 45vw;
+              max-width: 600px;
+              font-size: 0.9rem;
+            }
+          }
+
+          .listItem__publisher {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: map-get($colors, greyText);
+            @include ipad {
+              font-size: 0.85rem;
+            }
+          }
+        }
+      }
+    }
+
+    .listItem__description {
+      width: 97%;
+      margin-bottom: 15px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      line-height: 1.6;
+      font-size: 0.8rem;
+      font-weight: 500;
+      @include ipad {
+        -webkit-line-clamp: 3;
+        font-size: 0.85rem;
+      }
+    }
+
+    .listItem__bottomContainer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .bottomContainer__right {
+        display: flex;
+
+        .listItem__icon:first-child {
+          margin-right: 12px;
+        }
+      }
+
+      .bottomContainer__left {
+        display: flex;
+        align-items: center;
+
+        .listItem__icon:first-child {
+          margin-right: 12px;
+        }
+
+        .listItem__duration {
+          font-size: 0.8rem;
+          font-weight: 500;
+          color: map-get($colors, greyText);
+          @include ipad {
+            font-size: 0.85rem;
+          }
+        }
+      }
+    }
   }
 }

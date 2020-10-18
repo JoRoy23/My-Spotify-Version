@@ -7,7 +7,8 @@
   background-color: #21272c;
 }
 
-.footer, .footer__left .footer__image, .footer__center .footer__button {
+.footer, .footer__left .podcast__image,
+.footer__left .footer__image, .footer__center .footer__button {
   -webkit-box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
           box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 200ms ease;
@@ -60,6 +61,7 @@
           align-items: center;
 }
 
+.footer__left .podcast__image,
 .footer__left .footer__image {
   width: 48px;
   height: 48px;
@@ -69,6 +71,7 @@
 }
 
 @media screen and (min-width: 768px) {
+  .footer__left .podcast__image,
   .footer__left .footer__image {
     width: 65px;
     height: 65px;
@@ -77,33 +80,57 @@
   }
 }
 
+.footer__left .podcast__info,
+.footer__left .footer__songInfo {
+  width: 35vw;
+}
+
 @media screen and (min-width: 768px) {
+  .footer__left .podcast__info,
   .footer__left .footer__songInfo {
     width: 21vw;
-    max-width: 280px;
+    max-width: 600px;
   }
 }
 
+.footer__left .podcast__info .podcast__name,
+.footer__left .podcast__info .footer__song,
+.footer__left .footer__songInfo .podcast__name,
 .footer__left .footer__songInfo .footer__song {
   margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.85rem;
   font-weight: bold;
   color: #c8c8c8;
 }
 
 @media screen and (min-width: 768px) {
+  .footer__left .podcast__info .podcast__name,
+  .footer__left .podcast__info .footer__song,
+  .footer__left .footer__songInfo .podcast__name,
   .footer__left .footer__songInfo .footer__song {
     font-size: 0.9rem;
   }
 }
 
+.footer__left .podcast__info .podcast__publisher,
+.footer__left .podcast__info .footer__artists,
+.footer__left .footer__songInfo .podcast__publisher,
 .footer__left .footer__songInfo .footer__artists {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.8rem;
   font-weight: 500;
   color: #6e6e6e;
 }
 
 @media screen and (min-width: 768px) {
+  .footer__left .podcast__info .podcast__publisher,
+  .footer__left .podcast__info .footer__artists,
+  .footer__left .footer__songInfo .podcast__publisher,
   .footer__left .footer__songInfo .footer__artists {
     font-size: 0.85rem;
   }

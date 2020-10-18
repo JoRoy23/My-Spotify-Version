@@ -3,6 +3,8 @@
   display: -ms-flexbox;
   display: flex;
   margin-bottom: 15px;
+  width: 98%;
+  text-overflow: ellipsis;
   text-decoration: none;
   cursor: default;
   font-size: 0.9rem;

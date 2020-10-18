@@ -138,6 +138,7 @@ function HomeRow({ rowData, rowTitle }) {
 
         const podcastEpisodes = podcastsInfoResponse.episodes.items.map(
           (podcastsEpidsodes) => {
+            console.log(podcastsEpidsodes);
             // Show episodes informations
             const {
               id,
@@ -154,6 +155,7 @@ function HomeRow({ rowData, rowTitle }) {
               podcastDescription: description,
               podcastImages: images[0].url,
               podcastDuration: duration_ms,
+              podcastPublisher: publisher,
               from: "show",
             };
           }
@@ -172,16 +174,6 @@ function HomeRow({ rowData, rowTitle }) {
       getPodcasts(itemId);
     }
   };
-
-  // Get the artists for every playlists in each category
-  // const getPlaylistArtists = (playlistId) => {
-  //   const artists = playlistsArtists?.filter((playlist) => {
-  //     return playlist.playlistId === playlistId;
-  //   });
-  //   return !isDesktop
-  //     ? truncate(artists[0]?.playlistArtists.join(", "), 60)
-  //     : truncate(artists[0]?.playlistArtists.join(", "), 70);
-  // };
 
   // Set the bottom margin of the last row
   const setLastRowMargin = () => {

@@ -5,8 +5,6 @@ export const reducer = (state, action) => {
       return { ...state, token: action.token };
     case "SET_HOME-DATA-STATUS":
       return { ...state, isHomeDataLoaded: action.isHomeDataLoaded };
-    case "SET_DESKTOP-STATUS":
-      return { ...state, isDesktop: action.isDesktop };
     case "SET_FOOTER-STATUS":
       return { ...state, mobileFooterVisible: action.mobileFooterVisible };
     case "SET_USER":

@@ -19,11 +19,15 @@
   }
 
   .homeNewReleases__albums {
-    display: flex;
-    flex-wrap: wrap;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 7px;
     padding: 0 7px;
     @include ipad {
       padding: 0 7px;
+      row-gap: 10px;
     }
   }
 }

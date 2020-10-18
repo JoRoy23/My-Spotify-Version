@@ -23,4 +23,10 @@ const getDateYear = (str) => {
   const date = new Date(str);
   return date.getFullYear();
 };
-export { truncate, getArtists, customizeUrl, getDateYear };
+
+// Convert miliseconds to minutes or hours
+const convertMilliseconds = (milliseconds) => {
+  const minutes = Math.round(milliseconds / 60000);
+  return minutes;
+};
+export { truncate, getArtists, customizeUrl, getDateYear, convertMilliseconds };

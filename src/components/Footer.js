@@ -14,32 +14,46 @@ import Slider from "@material-ui/core/Slider";
 import "../css/Footer.css";
 
 const Footer = ({ onPlayButtonClick, footerVisibility }) => {
-  const [{ isPlaying, isDesktop, itemSelected }] = useContext(SpotifyContext);
+  const [{ isPlaying, itemSelected }] = useContext(SpotifyContext);
 
-  return itemSelected.type === "track" ? (
+  return (
     <footer className={footerVisibility}>
       <div className="footer__left">
-        <img
-          className="footer__image"
-          src={
-            itemSelected.albumImage
-              ? itemSelected.albumImage
-              : itemSelected.featureImage
-          }
-          alt={itemSelected.albumName}
-        />
-        <div className="footer__songInfo">
-          <h4 className="footer__song">
-            {!isDesktop
-              ? truncate(itemSelected.trackName, 22)
-              : itemSelected.trackName}
-          </h4>
-          <p className="footer__artists">
-            {!isDesktop
-              ? truncate(itemSelected.artistsName, 22)
-              : itemSelected.artistsName}
-          </p>
-        </div>
+        {itemSelected.type === "track" ? (
+          <React.Fragment>
+            <img
+              className="footer__image"
+              src={
+                itemSelected.albumImage
+                  ? itemSelected.albumImage
+                  : itemSelected.featureImage
+              }
+              alt={itemSelected.albumName}
+            />
+            <div className="footer__songInfo">
+              <h4 className="footer__song">{itemSelected.trackName}</h4>
+              <p className="footer__artists">{itemSelected.artistsName}</p>
+            </div>
+          </React.Fragment>
+        ) : (
+          <React.Fragment>
+            <img
+              className="podcast__image"
+              src={
+                itemSelected.podcastImages
+                  ? itemSelected.podcastImages
+                  : itemSelected.featureImage
+              }
+              alt={itemSelected.podcastName}
+            />
+            <div className="podcast__info">
+              <h4 className="podcast__name">{itemSelected.podcastsName}</h4>
+              <p className="podcast__publisher">
+                {itemSelected.podcastsPublisher}
+              </p>
+            </div>
+          </React.Fragment>
+        )}
       </div>
       <div className="footer__center">
         <FavoriteIcon className="footer__button footer__button--small" />
@@ -65,8 +79,6 @@ const Footer = ({ onPlayButtonClick, footerVisibility }) => {
         <Slider className="footer__slider" />
       </div>
     </footer>
-  ) : (
-    ""
   );
 };
 

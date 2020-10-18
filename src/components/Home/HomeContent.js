@@ -19,33 +19,12 @@ function HomeContent() {
       <HomeRow
         rowTitle={"Popular playlists"}
         rowData={state.featuredPlaylists}
-        // playlistsArtists={state.featuredPlaylistsArtists}
       />
-      <HomeRow
-        rowTitle={"Pop"}
-        rowData={state.popPlaylists}
-        // playlistsArtists={state.popPlaylistsArtists}
-      />
-      <HomeRow
-        rowTitle={"Dance/Electronic"}
-        rowData={state.dancePlaylists}
-        // playlistsArtists={state.dancePlaylistsArtists}
-      />
-      <HomeRow
-        rowTitle={"Hip-hop"}
-        rowData={state.hiphopPlaylists}
-        // playlistsArtists={state.hiphopPlaylistsArtists}
-      />
-      <HomeRow
-        rowTitle={"Rock"}
-        rowData={state.rockPlaylists}
-        // playlistsArtists={state.rockPlaylistsArtists}
-      />
-      <HomeRow
-        rowTitle={"Country"}
-        rowData={state.countryPlaylists}
-        // playlistsArtists={state.countryPlaylistsArtists}
-      />
+      <HomeRow rowTitle={"Pop"} rowData={state.popPlaylists} />
+      <HomeRow rowTitle={"Dance/Electronic"} rowData={state.dancePlaylists} />
+      <HomeRow rowTitle={"Hip-hop"} rowData={state.hiphopPlaylists} />
+      <HomeRow rowTitle={"Rock"} rowData={state.rockPlaylists} />
+      <HomeRow rowTitle={"Country"} rowData={state.countryPlaylists} />
       <HomeRow rowTitle={"Podcasts"} rowData={state.podcastsShow} />
     </div>
   );

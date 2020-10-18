@@ -45,7 +45,13 @@
     }
 
     .featuredItem__name {
+      width: 60vw;
+      max-width: 600px;
       margin-bottom: 3px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: center;
       font-size: 1.3rem;
       color: map-get($colors, secondaryAccent);
       @include ipad {
@@ -54,6 +60,26 @@
       }
     }
 
+    .featuredItem__description {
+      width: 70%;
+      max-width: 400px;
+      margin: 7px auto 10px;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
+      text-align: center;
+      line-height: 1.6;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: map-get($colors, secondaryAccent);
+      @include ipad {
+        font-size: 0.9rem;
+        -webkit-line-clamp: 3;
+      }
+    }
+
+    .featuredItem__nbEpisodes,
     .featuredItem__nbTracks,
     .featuredItem__nbFollowers {
       display: flex;

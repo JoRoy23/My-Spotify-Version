@@ -76,7 +76,13 @@
 }
 
 .featuredItem .featuredItem__info .featuredItem__name {
+  width: 60vw;
+  max-width: 600px;
   margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
   font-size: 1.3rem;
   color: #c8c8c8;
 }
@@ -88,6 +94,29 @@
   }
 }
 
+.featuredItem .featuredItem__info .featuredItem__description {
+  width: 70%;
+  max-width: 400px;
+  margin: 7px auto 10px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-align: center;
+  line-height: 1.6;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: #c8c8c8;
+}
+
+@media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__description {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+  }
+}
+
+.featuredItem .featuredItem__info .featuredItem__nbEpisodes,
 .featuredItem .featuredItem__info .featuredItem__nbTracks,
 .featuredItem .featuredItem__info .featuredItem__nbFollowers {
   display: -webkit-box;
@@ -102,6 +131,7 @@
 }
 
 @media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__nbEpisodes,
   .featuredItem .featuredItem__info .featuredItem__nbTracks,
   .featuredItem .featuredItem__info .featuredItem__nbFollowers {
     margin-bottom: 18px;
@@ -109,6 +139,7 @@
   }
 }
 
+.featuredItem .featuredItem__info .featuredItem__nbEpisodes .featuredItem__dot,
 .featuredItem .featuredItem__info .featuredItem__nbTracks .featuredItem__dot,
 .featuredItem .featuredItem__info .featuredItem__nbFollowers .featuredItem__dot {
   margin: 0 5px;
@@ -117,6 +148,7 @@
 }
 
 @media screen and (min-width: 768px) {
+  .featuredItem .featuredItem__info .featuredItem__nbEpisodes .featuredItem__dot,
   .featuredItem .featuredItem__info .featuredItem__nbTracks .featuredItem__dot,
   .featuredItem .featuredItem__info .featuredItem__nbFollowers .featuredItem__dot {
     font-size: 1rem;

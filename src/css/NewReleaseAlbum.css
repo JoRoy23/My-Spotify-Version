@@ -13,10 +13,6 @@
 }
 
 .newReleaseAlbum {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 45%;
-          flex: 0 0 45%;
-  margin: 0 auto 8px;
   padding-right: 1.4px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -33,7 +29,6 @@
 
 @media screen and (min-width: 768px) {
   .newReleaseAlbum {
-    margin: 0 auto 12px;
     border: 3.5px solid #21272c;
   }
 }
@@ -52,6 +47,10 @@
 
 .newReleaseAlbum .newReleaseAlbum__title {
   margin-left: 8px;
+  width: 60%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.7rem;
   font-weight: bold;
   cursor: default;

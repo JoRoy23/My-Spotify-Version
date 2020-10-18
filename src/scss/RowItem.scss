@@ -46,6 +46,14 @@
     }
   }
 
+  .rowItem__artists,
+  .rowItem__name,
+  .rowItem__publisher {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   .rowItem__artists {
     margin: 6px 0 2px 0;
     width: 115px;

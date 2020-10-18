@@ -5,7 +5,6 @@ import { reducer } from "./reducer";
 const initialState = {
   token: null, // User token
   isHomeDataLoaded: false, // Does the data of the home page is loaded
-  isDesktop: null, // Boolean depending on the width of the window
   mobileFooterVisible: false, // Set the visibility of the mobile footer
   user: { userName: "", userAvatar: [] }, // User information
   userPlaylists: [], // User playlists for the navbar
